@@ -90,11 +90,9 @@
   </kinds>
   <kinds name="SanStorage" scheme="http://schemas.ogf.org/occi/simulation#">
     <attributes name="bandwith" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
-    <attributes name="latency" mutable="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
+    <attributes name="latency" mutable="true" type="//@types.7"/>
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
   </kinds>
   <mixins name="priceStrategies" scheme="http://schemas.ogf.org/occi/simulation#">
