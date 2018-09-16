@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="Simulation" scheme="http://schemas.ogf.org/occi/simulation#">
+  <import href="http://schemas.ogf.org/occi/core#/"/>
+  <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
+  <kinds name="Datacenter" scheme="http://schemas.ogf.org/occi/simulation#">
+    <attributes name="datacenter.os" mutable="true" default="Linux">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="datacenter.location" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="datacenter.timezone" mutable="true" type="//@types.7"/>
+    <attributes name="datacenter.cost.mem" mutable="true" type="//@types.7"/>
+    <attributes name="datacenter.cost.bw" mutable="true" type="//@types.7"/>
+    <attributes name="datacenter.cost.storge" mutable="true" type="//@types.7"/>
+    <attributes name="datacenter.cost.process" mutable="true" description="" type="//@types.7"/>
+    <attributes name="datacenter.vmm" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="datacenter.name" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </kinds>
+  <kinds name="VM" scheme="http://schemas.ogf.org/occi/simulation#">
+    <attributes name="vm.id" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="vm.mips" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="vm.cores" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="vm.image.size" mutable="true" type="//@types.8"/>
+    <attributes name="vm.bw" mutable="true" type="//@types.8"/>
+    <attributes name="vm.ram" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="vm.os" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="vm.cloudlet.scheduler" mutable="true" type="//@types.4"/>
+    <attributes name="vm.elasticity" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </kinds>
+  <kinds name="Host" scheme="http://schemas.ogf.org/occi/simulation#">
+    <attributes name="host.id" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="host.ram.provisionner" mutable="true" description="" type="//@types.0"/>
+    <attributes name="host.bw.provisionner" mutable="true" default="" description="" type="//@types.1"/>
+    <attributes name="host.storage" mutable="true" type="//@types.8"/>
+    <attributes name="host.cores" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="host.vm.scheduler" mutable="true" type="//@types.3"/>
+    <attributes name="host.ram" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="host.mips" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="host.bw" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="host.pe.provisionner" mutable="true" description="" type="//@types.2"/>
+    <attributes name="host.elasticity" mutable="true" default="" type="//@types.6"/>
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </kinds>
+  <kinds name="Cloudlet" scheme="http://schemas.ogf.org/occi/simulation#">
+    <attributes name="cloudlet.id" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="cloudlet.length" mutable="true" type="//@types.8"/>
+    <attributes name="cloudlet.cores" mutable="true">
+      <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
+    </attributes>
+    <attributes name="cloudlet.file.size" mutable="true" type="//@types.8"/>
+    <attributes name="cloudlet.output.size" mutable="true" type="//@types.8"/>
+    <attributes name="cloudlet.utilization.model.cpu" mutable="true" type="//@types.5"/>
+    <attributes name="cloudlet.utilization.model.ram" mutable="true" type="//@types.5"/>
+    <attributes name="cloudlet.utilization.model.bw" mutable="true" type="//@types.5"/>
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </kinds>
+  <kinds name="HardDrive" scheme="http://schemas.ogf.org/occi/simulation#">
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
+  </kinds>
+  <kinds name="SanStorage" scheme="http://schemas.ogf.org/occi/simulation#">
+    <attributes name="bandwith" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <attributes name="latency" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
+  </kinds>
+  <mixins name="priceStrategies" scheme="http://schemas.ogf.org/occi/simulation#">
+    <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
+  </mixins>
+  <mixins name="Spot" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategies']"/>
+  <mixins name="on-demand" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategies']"/>
+  <mixins name="upFront" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategies']"/>
+  <types xsi:type="occi:EObjectType" name="RamProvisionner" instanceClassName="java.lang.Object"/>
+  <types xsi:type="occi:EObjectType" name="BwProvisionner" instanceClassName="java.lang.Object"/>
+  <types xsi:type="occi:EObjectType" name="PeProvisionner" instanceClassName="java.lang.Object"/>
+  <types xsi:type="occi:EObjectType" name="VmScheduler" instanceClassName="java.lang.Object"/>
+  <types xsi:type="occi:EObjectType" name="CloudletScheduler" instanceClassName="java.lang.Object"/>
+  <types xsi:type="occi:EObjectType" name="utilizationModel" instanceClassName="java.lang.Object"/>
+  <types xsi:type="occi:EnumerationType" name="ElasticityType"/>
+  <types xsi:type="occi:NumericType" name="double" type="Double"/>
+  <types xsi:type="occi:NumericType" name="Long" type="Long"/>
+</occi:Extension>
