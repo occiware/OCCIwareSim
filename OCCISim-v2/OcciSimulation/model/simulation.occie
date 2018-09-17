@@ -67,7 +67,7 @@
       <type xsi:type="occi:NumericType" href="http://schemas.ogf.org/occi/core#//@types.2"/>
     </attributes>
     <attributes name="host.pe.provisionner" mutable="true" description="" type="//@types.2"/>
-    <attributes name="host.elasticity" mutable="true" default="" type="//@types.6"/>
+    <attributes name="host.elasticity" mutable="true" default="None" type="//@types.6"/>
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </kinds>
   <kinds name="Cloudlet" scheme="http://schemas.ogf.org/occi/simulation#">
@@ -95,19 +95,23 @@
     <attributes name="latency" mutable="true" type="//@types.7"/>
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
   </kinds>
-  <mixins name="priceStrategies" scheme="http://schemas.ogf.org/occi/simulation#">
+  <mixins name="PriceStrategy" scheme="http://schemas.ogf.org/occi/simulation#">
     <applies href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </mixins>
-  <mixins name="Spot" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategies']"/>
-  <mixins name="on-demand" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategies']"/>
-  <mixins name="upFront" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategies']"/>
+  <mixins name="Spot" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategy']"/>
+  <mixins name="OnDemand" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategy']"/>
+  <mixins name="UpFront" scheme="http://schemas.ogf.org/occi/simulation#" depends="//@mixins[term='pricestrategy']"/>
   <types xsi:type="occi:EObjectType" name="RamProvisionner" instanceClassName="java.lang.Object"/>
   <types xsi:type="occi:EObjectType" name="BwProvisionner" instanceClassName="java.lang.Object"/>
   <types xsi:type="occi:EObjectType" name="PeProvisionner" instanceClassName="java.lang.Object"/>
   <types xsi:type="occi:EObjectType" name="VmScheduler" instanceClassName="java.lang.Object"/>
   <types xsi:type="occi:EObjectType" name="CloudletScheduler" instanceClassName="java.lang.Object"/>
   <types xsi:type="occi:EObjectType" name="utilizationModel" instanceClassName="java.lang.Object"/>
-  <types xsi:type="occi:EnumerationType" name="ElasticityType"/>
+  <types xsi:type="occi:EnumerationType" name="ElasticityType">
+    <literals name="None"/>
+    <literals name="Vertical"/>
+    <literals name="Horizontal"/>
+  </types>
   <types xsi:type="occi:NumericType" name="double" type="Double"/>
   <types xsi:type="occi:NumericType" name="Long" type="Long"/>
 </occi:Extension>
