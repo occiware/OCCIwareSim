@@ -71,6 +71,7 @@ public class VmItemProvider extends ComputeItemProvider {
 			addVmOsPropertyDescriptor(object);
 			addVmCloudletSchedulerPropertyDescriptor(object);
 			addVmElasticityPropertyDescriptor(object);
+			addVmVmmPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -274,6 +275,28 @@ public class VmItemProvider extends ComputeItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Vm Vmm feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addVmVmmPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Vm_vmVmm_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Vm_vmVmm_feature", "_UI_Vm_type"),
+				 SimulationPackage.Literals.VM__VM_VMM,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Vm.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -320,6 +343,7 @@ public class VmItemProvider extends ComputeItemProvider {
 			case SimulationPackage.VM__VM_OS:
 			case SimulationPackage.VM__VM_CLOUDLET_SCHEDULER:
 			case SimulationPackage.VM__VM_ELASTICITY:
+			case SimulationPackage.VM__VM_VMM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

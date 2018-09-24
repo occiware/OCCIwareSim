@@ -12,6 +12,7 @@
  */
 package occ.simulation.impl;
 
+import occ.simulation.ElasticityType;
 import occ.simulation.SimulationPackage;
 import occ.simulation.Vm;
 
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link occ.simulation.impl.VmImpl#getVmOs <em>Vm Os</em>}</li>
  *   <li>{@link occ.simulation.impl.VmImpl#getVmCloudletScheduler <em>Vm Cloudlet Scheduler</em>}</li>
  *   <li>{@link occ.simulation.impl.VmImpl#getVmElasticity <em>Vm Elasticity</em>}</li>
+ *   <li>{@link occ.simulation.impl.VmImpl#getVmVmm <em>Vm Vmm</em>}</li>
  * </ul>
  *
  * @generated
@@ -213,7 +215,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VM_ELASTICITY_EDEFAULT = null;
+	protected static final ElasticityType VM_ELASTICITY_EDEFAULT = ElasticityType.NONE;
 
 	/**
 	 * The cached value of the '{@link #getVmElasticity() <em>Vm Elasticity</em>}' attribute.
@@ -223,7 +225,27 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected String vmElasticity = VM_ELASTICITY_EDEFAULT;
+	protected ElasticityType vmElasticity = VM_ELASTICITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getVmVmm() <em>Vm Vmm</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVmVmm()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VM_VMM_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getVmVmm() <em>Vm Vmm</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVmVmm()
+	 * @generated
+	 * @ordered
+	 */
+	protected String vmVmm = VM_VMM_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -417,7 +439,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getVmElasticity() {
+	public ElasticityType getVmElasticity() {
 		return vmElasticity;
 	}
 
@@ -426,11 +448,32 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVmElasticity(String newVmElasticity) {
-		String oldVmElasticity = vmElasticity;
-		vmElasticity = newVmElasticity;
+	public void setVmElasticity(ElasticityType newVmElasticity) {
+		ElasticityType oldVmElasticity = vmElasticity;
+		vmElasticity = newVmElasticity == null ? VM_ELASTICITY_EDEFAULT : newVmElasticity;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.VM__VM_ELASTICITY, oldVmElasticity, vmElasticity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getVmVmm() {
+		return vmVmm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setVmVmm(String newVmVmm) {
+		String oldVmVmm = vmVmm;
+		vmVmm = newVmVmm;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.VM__VM_VMM, oldVmVmm, vmVmm));
 	}
 
 	/**
@@ -459,6 +502,8 @@ public class VmImpl extends ComputeImpl implements Vm {
 				return getVmCloudletScheduler();
 			case SimulationPackage.VM__VM_ELASTICITY:
 				return getVmElasticity();
+			case SimulationPackage.VM__VM_VMM:
+				return getVmVmm();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -496,7 +541,10 @@ public class VmImpl extends ComputeImpl implements Vm {
 				setVmCloudletScheduler(newValue);
 				return;
 			case SimulationPackage.VM__VM_ELASTICITY:
-				setVmElasticity((String)newValue);
+				setVmElasticity((ElasticityType)newValue);
+				return;
+			case SimulationPackage.VM__VM_VMM:
+				setVmVmm((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -537,6 +585,9 @@ public class VmImpl extends ComputeImpl implements Vm {
 			case SimulationPackage.VM__VM_ELASTICITY:
 				setVmElasticity(VM_ELASTICITY_EDEFAULT);
 				return;
+			case SimulationPackage.VM__VM_VMM:
+				setVmVmm(VM_VMM_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -566,7 +617,9 @@ public class VmImpl extends ComputeImpl implements Vm {
 			case SimulationPackage.VM__VM_CLOUDLET_SCHEDULER:
 				return VM_CLOUDLET_SCHEDULER_EDEFAULT == null ? vmCloudletScheduler != null : !VM_CLOUDLET_SCHEDULER_EDEFAULT.equals(vmCloudletScheduler);
 			case SimulationPackage.VM__VM_ELASTICITY:
-				return VM_ELASTICITY_EDEFAULT == null ? vmElasticity != null : !VM_ELASTICITY_EDEFAULT.equals(vmElasticity);
+				return vmElasticity != VM_ELASTICITY_EDEFAULT;
+			case SimulationPackage.VM__VM_VMM:
+				return VM_VMM_EDEFAULT == null ? vmVmm != null : !VM_VMM_EDEFAULT.equals(vmVmm);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -599,6 +652,8 @@ public class VmImpl extends ComputeImpl implements Vm {
 		result.append(vmCloudletScheduler);
 		result.append(", vmElasticity: ");
 		result.append(vmElasticity);
+		result.append(", vmVmm: ");
+		result.append(vmVmm);
 		result.append(')');
 		return result.toString();
 	}

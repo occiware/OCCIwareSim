@@ -41,7 +41,8 @@
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <attributes name="vm.cloudlet.scheduler" mutable="true" type="//@types.4"/>
-    <attributes name="vm.elasticity" mutable="true">
+    <attributes name="vm.elasticity" mutable="true" type="//@types.6"/>
+    <attributes name="vm.vmm" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <parent href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>

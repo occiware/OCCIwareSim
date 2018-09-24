@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="OcciSimulation.design.extended/src"/>
+	<classpathentry kind="src" path="OcciSimulation.edit/src-gen"/>
+	<classpathentry kind="src" path="OcciSimulation/src-gen"/>
+	<classpathentry kind="output" path="OcciSimulation/bin"/>
+</classpath>

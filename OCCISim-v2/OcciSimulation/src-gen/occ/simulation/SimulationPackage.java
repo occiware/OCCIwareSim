@@ -678,13 +678,22 @@ public interface SimulationPackage extends EPackage {
 	int VM__VM_ELASTICITY = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 8;
 
 	/**
+	 * The feature id for the '<em><b>Vm Vmm</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VM__VM_VMM = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Vm</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VM_FEATURE_COUNT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 9;
+	int VM_FEATURE_COUNT = InfrastructurePackage.COMPUTE_FEATURE_COUNT + 10;
 
 	/**
 	 * The operation id for the '<em>Occi Create</em>' operation.
@@ -2471,6 +2480,17 @@ public interface SimulationPackage extends EPackage {
 	EAttribute getVm_VmElasticity();
 
 	/**
+	 * Returns the meta object for the attribute '{@link occ.simulation.Vm#getVmVmm <em>Vm Vmm</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Vm Vmm</em>'.
+	 * @see occ.simulation.Vm#getVmVmm()
+	 * @see #getVm()
+	 * @generated
+	 */
+	EAttribute getVm_VmVmm();
+
+	/**
 	 * Returns the meta object for class '{@link occ.simulation.Host <em>Host</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3075,6 +3095,14 @@ public interface SimulationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VM__VM_ELASTICITY = eINSTANCE.getVm_VmElasticity();
+
+		/**
+		 * The meta object literal for the '<em><b>Vm Vmm</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VM__VM_VMM = eINSTANCE.getVm_VmVmm();
 
 		/**
 		 * The meta object literal for the '{@link occ.simulation.impl.HostImpl <em>Host</em>}' class.

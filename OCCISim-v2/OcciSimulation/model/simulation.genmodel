@@ -101,6 +101,9 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="simulation.ecore#//Vm/vmElasticity"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="simulation.ecore#//Vm/vmVmm"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="simulation.ecore#//Host"/>
@@ -190,6 +193,6 @@
       <ecoreClass href="simulation.ecore#//Upfront"/>
     </genClasses>
   </genPackages>
-  <usedGenPackages href="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
 </genmodel:GenModel>

@@ -36,6 +36,7 @@ import org.eclipse.cmf.occi.infrastructure.Compute;
  *   <li>{@link occ.simulation.Vm#getVmOs <em>Vm Os</em>}</li>
  *   <li>{@link occ.simulation.Vm#getVmCloudletScheduler <em>Vm Cloudlet Scheduler</em>}</li>
  *   <li>{@link occ.simulation.Vm#getVmElasticity <em>Vm Elasticity</em>}</li>
+ *   <li>{@link occ.simulation.Vm#getVmVmm <em>Vm Vmm</em>}</li>
  * </ul>
  *
  * @see occ.simulation.SimulationPackage#getVm()
@@ -253,28 +254,56 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Elasticity</b></em>' attribute.
+	 * The literals are from the enumeration {@link occ.simulation.ElasticityType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Vm Elasticity</em>' attribute.
-	 * @see #setVmElasticity(String)
+	 * @see occ.simulation.ElasticityType
+	 * @see #setVmElasticity(ElasticityType)
 	 * @see occ.simulation.SimulationPackage#getVm_VmElasticity()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmElasticity'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmElasticity'"
 	 * @generated
 	 */
-	String getVmElasticity();
+	ElasticityType getVmElasticity();
 
 	/**
 	 * Sets the value of the '{@link occ.simulation.Vm#getVmElasticity <em>Vm Elasticity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Vm Elasticity</em>' attribute.
+	 * @see occ.simulation.ElasticityType
 	 * @see #getVmElasticity()
 	 * @generated
 	 */
-	void setVmElasticity(String value);
+	void setVmElasticity(ElasticityType value);
+
+	/**
+	 * Returns the value of the '<em><b>Vm Vmm</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Vm Vmm</em>' attribute.
+	 * @see #setVmVmm(String)
+	 * @see occ.simulation.SimulationPackage#getVm_VmVmm()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmVmm'"
+	 * @generated
+	 */
+	String getVmVmm();
+
+	/**
+	 * Sets the value of the '{@link occ.simulation.Vm#getVmVmm <em>Vm Vmm</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Vm Vmm</em>' attribute.
+	 * @see #getVmVmm()
+	 * @generated
+	 */
+	void setVmVmm(String value);
 
 } // Vm

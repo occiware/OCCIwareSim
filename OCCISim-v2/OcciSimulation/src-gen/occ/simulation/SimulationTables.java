@@ -61,7 +61,7 @@ public class SimulationTables
 	 *	Constants used by auto-generated code.
 	 */
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", null, org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/simulation/ecore", null, occ.simulation.SimulationPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = occ.simulation.SimulationTables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
@@ -381,6 +381,7 @@ public class SimulationTables
 		public static final /*@NonNull*/ ExecutorProperty _Vm__vmMips = new EcoreExecutorProperty(SimulationPackage.Literals.VM__VM_MIPS, Types._Vm, 6);
 		public static final /*@NonNull*/ ExecutorProperty _Vm__vmOs = new EcoreExecutorProperty(SimulationPackage.Literals.VM__VM_OS, Types._Vm, 7);
 		public static final /*@NonNull*/ ExecutorProperty _Vm__vmRam = new EcoreExecutorProperty(SimulationPackage.Literals.VM__VM_RAM, Types._Vm, 8);
+		public static final /*@NonNull*/ ExecutorProperty _Vm__vmVmm = new EcoreExecutorProperty(SimulationPackage.Literals.VM__VM_VMM, Types._Vm, 9);
 		static {
 			Init.initEnd();
 		}
@@ -1378,7 +1379,8 @@ public class SimulationTables
 			SimulationTables.Properties._Vm__vmImageSize,
 			SimulationTables.Properties._Vm__vmMips,
 			SimulationTables.Properties._Vm__vmOs,
-			SimulationTables.Properties._Vm__vmRam
+			SimulationTables.Properties._Vm__vmRam,
+			SimulationTables.Properties._Vm__vmVmm
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _VmScheduler = {};

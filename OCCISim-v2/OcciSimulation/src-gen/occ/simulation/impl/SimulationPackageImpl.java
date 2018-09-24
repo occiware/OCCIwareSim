@@ -442,6 +442,15 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getVm_VmVmm() {
+		return (EAttribute)vmEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getHost() {
 		return hostEClass;
 	}
@@ -837,6 +846,7 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 		createEAttribute(vmEClass, VM__VM_OS);
 		createEAttribute(vmEClass, VM__VM_CLOUDLET_SCHEDULER);
 		createEAttribute(vmEClass, VM__VM_ELASTICITY);
+		createEAttribute(vmEClass, VM__VM_VMM);
 
 		hostEClass = createEClass(HOST);
 		createEAttribute(hostEClass, HOST__HOST_ID);
@@ -957,7 +967,8 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 		initEAttribute(getVm_VmRam(), theOCCIPackage.getInteger(), "vmRam", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVm_VmOs(), theOCCIPackage.getString(), "vmOs", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVm_VmCloudletScheduler(), this.getCloudletScheduler(), "vmCloudletScheduler", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmElasticity(), theOCCIPackage.getString(), "vmElasticity", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmElasticity(), this.getElasticityType(), "vmElasticity", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmVmm(), theOCCIPackage.getString(), "vmVmm", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hostEClass, Host.class, "Host", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHost_HostId(), theOCCIPackage.getInteger(), "hostId", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

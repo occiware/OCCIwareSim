@@ -9,7 +9,7 @@
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
-    <details key="infrastructure" value="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
+    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EDataType" name="RamProvisionner" instanceClassName="java.lang.Object"/>
   <eClassifiers xsi:type="ecore:EDataType" name="BwProvisionner" instanceClassName="java.lang.Object"/>
@@ -24,7 +24,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="double" instanceClassName="java.lang.Double"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Long" instanceClassName="java.lang.Long"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Datacenter" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
+  <eClassifiers xsi:type="ecore:EClass" name="Datacenter" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
@@ -76,7 +76,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Vm" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
+  <eClassifiers xsi:type="ecore:EClass" name="Vm" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
@@ -120,13 +120,18 @@
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vmElasticity" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vmElasticity" eType="#//ElasticityType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vmVmm" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Host" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
+  <eClassifiers xsi:type="ecore:EClass" name="Host" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
@@ -187,7 +192,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Cloudlet" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
+  <eClassifiers xsi:type="ecore:EClass" name="Cloudlet" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Compute">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
@@ -235,12 +240,12 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Harddrive" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Storage">
+  <eClassifiers xsi:type="ecore:EClass" name="Harddrive" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Storage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sanstorage" eSuperTypes="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Storage">
+  <eClassifiers xsi:type="ecore:EClass" name="Sanstorage" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Storage">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value=""/>
     </eAnnotations>
