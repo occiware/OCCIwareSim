@@ -35,7 +35,6 @@ import org.occiware.clouddesigner.occi.simulation.cloudsim.handlers.BrigeConfigS
 import org.occiware.clouddesigner.occi.simulation.cloudsim.handlers.Parser.Dc_Config;
 import org.occiware.clouddesigner.occi.simulation.cloudsim.handlers.Parser.Entity;
 import org.occiware.clouddesigner.occi.simulation.cloudsim.handlers.Parser.VM_Config;
-//import org.occiware.clouddesigner.occi.simulation.impl.BinomialeImpl;
 import org.occiware.clouddesigner.occi.simulation.cloudsim.handlers.Simulation;
 
 import OcciSimulation.design.extended.treatment.Price;
@@ -51,7 +50,6 @@ import org.eclipse.cmf.occi.core.OCCIFactory;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.core.design.dialog.LoadExtensionDialog;
 import org.eclipse.cmf.occi.core.Resource;
-
 
 
 public class DesignServices {

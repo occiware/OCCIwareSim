@@ -1,4 +1,3 @@
-
 package org.occiware.clouddesigner.occi.simulation.cloudsim.handlers;
 
 
@@ -17,7 +16,6 @@ import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
-
 import occ.simulation.ElasticityType;
 import occ.simulation.impl.HostImpl;
 import occ.simulation.impl.VmImpl;
@@ -36,7 +34,6 @@ public class Parser {
 
 	public Parser(Configuration config){
 		this.configuration= config;
-		System.out.println("BrigeConfigSimulation");
 	}
 
 	public Map<Entity, Set<Entity>> parsing(){
