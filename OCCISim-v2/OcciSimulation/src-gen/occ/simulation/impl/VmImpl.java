@@ -12,6 +12,7 @@
  */
 package occ.simulation.impl;
 
+import occ.simulation.CloudletScheduler;
 import occ.simulation.ElasticityType;
 import occ.simulation.SimulationPackage;
 import occ.simulation.Vm;
@@ -55,7 +56,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer VM_ID_EDEFAULT = null;
+	protected static final Integer VM_ID_EDEFAULT = new Integer(0);
 
 	/**
 	 * The cached value of the '{@link #getVmId() <em>Vm Id</em>}' attribute.
@@ -75,7 +76,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer VM_MIPS_EDEFAULT = null;
+	protected static final Integer VM_MIPS_EDEFAULT = new Integer(1000);
 
 	/**
 	 * The cached value of the '{@link #getVmMips() <em>Vm Mips</em>}' attribute.
@@ -95,7 +96,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer VM_CORES_EDEFAULT = null;
+	protected static final Integer VM_CORES_EDEFAULT = new Integer(1);
 
 	/**
 	 * The cached value of the '{@link #getVmCores() <em>Vm Cores</em>}' attribute.
@@ -115,7 +116,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Long VM_IMAGE_SIZE_EDEFAULT = null;
+	protected static final Long VM_IMAGE_SIZE_EDEFAULT = new Long(10000L);
 
 	/**
 	 * The cached value of the '{@link #getVmImageSize() <em>Vm Image Size</em>}' attribute.
@@ -135,7 +136,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Long VM_BW_EDEFAULT = null;
+	protected static final Long VM_BW_EDEFAULT = new Long(1000L);
 
 	/**
 	 * The cached value of the '{@link #getVmBw() <em>Vm Bw</em>}' attribute.
@@ -155,7 +156,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer VM_RAM_EDEFAULT = null;
+	protected static final Integer VM_RAM_EDEFAULT = new Integer(512);
 
 	/**
 	 * The cached value of the '{@link #getVmRam() <em>Vm Ram</em>}' attribute.
@@ -175,7 +176,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VM_OS_EDEFAULT = null;
+	protected static final String VM_OS_EDEFAULT = "Linux";
 
 	/**
 	 * The cached value of the '{@link #getVmOs() <em>Vm Os</em>}' attribute.
@@ -195,7 +196,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object VM_CLOUDLET_SCHEDULER_EDEFAULT = null;
+	protected static final CloudletScheduler VM_CLOUDLET_SCHEDULER_EDEFAULT = CloudletScheduler.CLOUDLET_SCHEDULER_TIME_SHARED;
 
 	/**
 	 * The cached value of the '{@link #getVmCloudletScheduler() <em>Vm Cloudlet Scheduler</em>}' attribute.
@@ -205,7 +206,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object vmCloudletScheduler = VM_CLOUDLET_SCHEDULER_EDEFAULT;
+	protected CloudletScheduler vmCloudletScheduler = VM_CLOUDLET_SCHEDULER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getVmElasticity() <em>Vm Elasticity</em>}' attribute.
@@ -235,7 +236,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VM_VMM_EDEFAULT = null;
+	protected static final String VM_VMM_EDEFAULT = "Xen";
 
 	/**
 	 * The cached value of the '{@link #getVmVmm() <em>Vm Vmm</em>}' attribute.
@@ -418,7 +419,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getVmCloudletScheduler() {
+	public CloudletScheduler getVmCloudletScheduler() {
 		return vmCloudletScheduler;
 	}
 
@@ -427,9 +428,9 @@ public class VmImpl extends ComputeImpl implements Vm {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setVmCloudletScheduler(Object newVmCloudletScheduler) {
-		Object oldVmCloudletScheduler = vmCloudletScheduler;
-		vmCloudletScheduler = newVmCloudletScheduler;
+	public void setVmCloudletScheduler(CloudletScheduler newVmCloudletScheduler) {
+		CloudletScheduler oldVmCloudletScheduler = vmCloudletScheduler;
+		vmCloudletScheduler = newVmCloudletScheduler == null ? VM_CLOUDLET_SCHEDULER_EDEFAULT : newVmCloudletScheduler;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.VM__VM_CLOUDLET_SCHEDULER, oldVmCloudletScheduler, vmCloudletScheduler));
 	}
@@ -538,7 +539,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 				setVmOs((String)newValue);
 				return;
 			case SimulationPackage.VM__VM_CLOUDLET_SCHEDULER:
-				setVmCloudletScheduler(newValue);
+				setVmCloudletScheduler((CloudletScheduler)newValue);
 				return;
 			case SimulationPackage.VM__VM_ELASTICITY:
 				setVmElasticity((ElasticityType)newValue);
@@ -615,7 +616,7 @@ public class VmImpl extends ComputeImpl implements Vm {
 			case SimulationPackage.VM__VM_OS:
 				return VM_OS_EDEFAULT == null ? vmOs != null : !VM_OS_EDEFAULT.equals(vmOs);
 			case SimulationPackage.VM__VM_CLOUDLET_SCHEDULER:
-				return VM_CLOUDLET_SCHEDULER_EDEFAULT == null ? vmCloudletScheduler != null : !VM_CLOUDLET_SCHEDULER_EDEFAULT.equals(vmCloudletScheduler);
+				return vmCloudletScheduler != VM_CLOUDLET_SCHEDULER_EDEFAULT;
 			case SimulationPackage.VM__VM_ELASTICITY:
 				return vmElasticity != VM_ELASTICITY_EDEFAULT;
 			case SimulationPackage.VM__VM_VMM:

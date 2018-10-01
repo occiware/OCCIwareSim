@@ -72,6 +72,7 @@ public interface Datacenter extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Datacenter Location</b></em>' attribute.
+	 * The default value is <code>"US East (N. Virginia)"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -80,7 +81,7 @@ public interface Datacenter extends Compute {
 	 * @return the value of the '<em>Datacenter Location</em>' attribute.
 	 * @see #setDatacenterLocation(String)
 	 * @see occ.simulation.SimulationPackage#getDatacenter_DatacenterLocation()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model default="US East (N. Virginia)" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Datacenter!datacenterLocation'"
 	 * @generated
 	 */
@@ -98,6 +99,7 @@ public interface Datacenter extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Datacenter Timezone</b></em>' attribute.
+	 * The default value is <code>"10.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -106,7 +108,7 @@ public interface Datacenter extends Compute {
 	 * @return the value of the '<em>Datacenter Timezone</em>' attribute.
 	 * @see #setDatacenterTimezone(Double)
 	 * @see occ.simulation.SimulationPackage#getDatacenter_DatacenterTimezone()
-	 * @model dataType="occ.simulation.double"
+	 * @model default="10.0" dataType="occ.simulation.double"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Datacenter!datacenterTimezone'"
 	 * @generated
 	 */
@@ -124,6 +126,7 @@ public interface Datacenter extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Datacenter Cost Mem</b></em>' attribute.
+	 * The default value is <code>"0.05"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -132,7 +135,7 @@ public interface Datacenter extends Compute {
 	 * @return the value of the '<em>Datacenter Cost Mem</em>' attribute.
 	 * @see #setDatacenterCostMem(Double)
 	 * @see occ.simulation.SimulationPackage#getDatacenter_DatacenterCostMem()
-	 * @model dataType="occ.simulation.double"
+	 * @model default="0.05" dataType="occ.simulation.double"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Datacenter!datacenterCostMem'"
 	 * @generated
 	 */
@@ -150,6 +153,7 @@ public interface Datacenter extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Datacenter Cost Bw</b></em>' attribute.
+	 * The default value is <code>"0.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -158,7 +162,7 @@ public interface Datacenter extends Compute {
 	 * @return the value of the '<em>Datacenter Cost Bw</em>' attribute.
 	 * @see #setDatacenterCostBw(Double)
 	 * @see occ.simulation.SimulationPackage#getDatacenter_DatacenterCostBw()
-	 * @model dataType="occ.simulation.double"
+	 * @model default="0.0" dataType="occ.simulation.double"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Datacenter!datacenterCostBw'"
 	 * @generated
 	 */
@@ -176,6 +180,7 @@ public interface Datacenter extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Datacenter Cost Storge</b></em>' attribute.
+	 * The default value is <code>"0.001"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -184,7 +189,7 @@ public interface Datacenter extends Compute {
 	 * @return the value of the '<em>Datacenter Cost Storge</em>' attribute.
 	 * @see #setDatacenterCostStorge(Double)
 	 * @see occ.simulation.SimulationPackage#getDatacenter_DatacenterCostStorge()
-	 * @model dataType="occ.simulation.double"
+	 * @model default="0.001" dataType="occ.simulation.double"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Datacenter!datacenterCostStorge'"
 	 * @generated
 	 */
@@ -202,6 +207,7 @@ public interface Datacenter extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Datacenter Cost Process</b></em>' attribute.
+	 * The default value is <code>"3.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -210,7 +216,7 @@ public interface Datacenter extends Compute {
 	 * @return the value of the '<em>Datacenter Cost Process</em>' attribute.
 	 * @see #setDatacenterCostProcess(Double)
 	 * @see occ.simulation.SimulationPackage#getDatacenter_DatacenterCostProcess()
-	 * @model dataType="occ.simulation.double"
+	 * @model default="3.0" dataType="occ.simulation.double"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Datacenter!datacenterCostProcess'"
 	 * @generated
 	 */
@@ -228,6 +234,7 @@ public interface Datacenter extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Datacenter Vmm</b></em>' attribute.
+	 * The default value is <code>"Xen"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -236,7 +243,7 @@ public interface Datacenter extends Compute {
 	 * @return the value of the '<em>Datacenter Vmm</em>' attribute.
 	 * @see #setDatacenterVmm(String)
 	 * @see occ.simulation.SimulationPackage#getDatacenter_DatacenterVmm()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model default="Xen" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Datacenter!datacenterVmm'"
 	 * @generated
 	 */
@@ -254,6 +261,7 @@ public interface Datacenter extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Datacenter Name</b></em>' attribute.
+	 * The default value is <code>"datacenter"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -262,7 +270,7 @@ public interface Datacenter extends Compute {
 	 * @return the value of the '<em>Datacenter Name</em>' attribute.
 	 * @see #setDatacenterName(String)
 	 * @see occ.simulation.SimulationPackage#getDatacenter_DatacenterName()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model default="datacenter" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Datacenter!datacenterName'"
 	 * @generated
 	 */

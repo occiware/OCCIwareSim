@@ -92,18 +92,18 @@ public class SimulationFactoryImpl extends EFactoryImpl implements SimulationFac
 		switch (eDataType.getClassifierID()) {
 			case SimulationPackage.ELASTICITY_TYPE:
 				return createElasticityTypeFromString(eDataType, initialValue);
-			case SimulationPackage.RAM_PROVISIONNER:
-				return createRamProvisionnerFromString(eDataType, initialValue);
-			case SimulationPackage.BW_PROVISIONNER:
-				return createBwProvisionnerFromString(eDataType, initialValue);
-			case SimulationPackage.PE_PROVISIONNER:
-				return createPeProvisionnerFromString(eDataType, initialValue);
-			case SimulationPackage.VM_SCHEDULER:
-				return createVmSchedulerFromString(eDataType, initialValue);
 			case SimulationPackage.CLOUDLET_SCHEDULER:
 				return createCloudletSchedulerFromString(eDataType, initialValue);
 			case SimulationPackage.UTILIZATION_MODEL:
 				return createutilizationModelFromString(eDataType, initialValue);
+			case SimulationPackage.VM_SCHEDULER:
+				return createVmSchedulerFromString(eDataType, initialValue);
+			case SimulationPackage.PE_PROVISIONNER:
+				return createPeProvisionnerFromString(eDataType, initialValue);
+			case SimulationPackage.RAM_PROVISIONNER:
+				return createRamProvisionnerFromString(eDataType, initialValue);
+			case SimulationPackage.BW_PROVISIONNER:
+				return createBwProvisionnerFromString(eDataType, initialValue);
 			case SimulationPackage.DOUBLE:
 				return createdoubleFromString(eDataType, initialValue);
 			case SimulationPackage.LONG:
@@ -123,18 +123,18 @@ public class SimulationFactoryImpl extends EFactoryImpl implements SimulationFac
 		switch (eDataType.getClassifierID()) {
 			case SimulationPackage.ELASTICITY_TYPE:
 				return convertElasticityTypeToString(eDataType, instanceValue);
-			case SimulationPackage.RAM_PROVISIONNER:
-				return convertRamProvisionnerToString(eDataType, instanceValue);
-			case SimulationPackage.BW_PROVISIONNER:
-				return convertBwProvisionnerToString(eDataType, instanceValue);
-			case SimulationPackage.PE_PROVISIONNER:
-				return convertPeProvisionnerToString(eDataType, instanceValue);
-			case SimulationPackage.VM_SCHEDULER:
-				return convertVmSchedulerToString(eDataType, instanceValue);
 			case SimulationPackage.CLOUDLET_SCHEDULER:
 				return convertCloudletSchedulerToString(eDataType, instanceValue);
 			case SimulationPackage.UTILIZATION_MODEL:
 				return convertutilizationModelToString(eDataType, instanceValue);
+			case SimulationPackage.VM_SCHEDULER:
+				return convertVmSchedulerToString(eDataType, instanceValue);
+			case SimulationPackage.PE_PROVISIONNER:
+				return convertPeProvisionnerToString(eDataType, instanceValue);
+			case SimulationPackage.RAM_PROVISIONNER:
+				return convertRamProvisionnerToString(eDataType, instanceValue);
+			case SimulationPackage.BW_PROVISIONNER:
+				return convertBwProvisionnerToString(eDataType, instanceValue);
 			case SimulationPackage.DOUBLE:
 				return convertdoubleToString(eDataType, instanceValue);
 			case SimulationPackage.LONG:
@@ -269,80 +269,10 @@ public class SimulationFactoryImpl extends EFactoryImpl implements SimulationFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object createRamProvisionnerFromString(EDataType eDataType, String initialValue) {
-		return super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertRamProvisionnerToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Object createBwProvisionnerFromString(EDataType eDataType, String initialValue) {
-		return super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertBwProvisionnerToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Object createPeProvisionnerFromString(EDataType eDataType, String initialValue) {
-		return super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertPeProvisionnerToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Object createVmSchedulerFromString(EDataType eDataType, String initialValue) {
-		return super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertVmSchedulerToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Object createCloudletSchedulerFromString(EDataType eDataType, String initialValue) {
-		return super.createFromString(eDataType, initialValue);
+	public CloudletScheduler createCloudletSchedulerFromString(EDataType eDataType, String initialValue) {
+		CloudletScheduler result = CloudletScheduler.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -351,7 +281,7 @@ public class SimulationFactoryImpl extends EFactoryImpl implements SimulationFac
 	 * @generated
 	 */
 	public String convertCloudletSchedulerToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
@@ -359,8 +289,10 @@ public class SimulationFactoryImpl extends EFactoryImpl implements SimulationFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object createutilizationModelFromString(EDataType eDataType, String initialValue) {
-		return super.createFromString(eDataType, initialValue);
+	public utilizationModel createutilizationModelFromString(EDataType eDataType, String initialValue) {
+		utilizationModel result = utilizationModel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -369,7 +301,87 @@ public class SimulationFactoryImpl extends EFactoryImpl implements SimulationFac
 	 * @generated
 	 */
 	public String convertutilizationModelToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VmScheduler createVmSchedulerFromString(EDataType eDataType, String initialValue) {
+		VmScheduler result = VmScheduler.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertVmSchedulerToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PeProvisionner createPeProvisionnerFromString(EDataType eDataType, String initialValue) {
+		PeProvisionner result = PeProvisionner.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPeProvisionnerToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RamProvisionner createRamProvisionnerFromString(EDataType eDataType, String initialValue) {
+		RamProvisionner result = RamProvisionner.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRamProvisionnerToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BwProvisionner createBwProvisionnerFromString(EDataType eDataType, String initialValue) {
+		BwProvisionner result = BwProvisionner.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBwProvisionnerToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

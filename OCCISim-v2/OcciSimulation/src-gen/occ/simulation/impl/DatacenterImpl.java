@@ -73,7 +73,7 @@ public class DatacenterImpl extends ComputeImpl implements Datacenter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DATACENTER_LOCATION_EDEFAULT = null;
+	protected static final String DATACENTER_LOCATION_EDEFAULT = "US East (N. Virginia)";
 
 	/**
 	 * The cached value of the '{@link #getDatacenterLocation() <em>Datacenter Location</em>}' attribute.
@@ -93,7 +93,7 @@ public class DatacenterImpl extends ComputeImpl implements Datacenter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double DATACENTER_TIMEZONE_EDEFAULT = null;
+	protected static final Double DATACENTER_TIMEZONE_EDEFAULT = new Double(10.0);
 
 	/**
 	 * The cached value of the '{@link #getDatacenterTimezone() <em>Datacenter Timezone</em>}' attribute.
@@ -113,7 +113,7 @@ public class DatacenterImpl extends ComputeImpl implements Datacenter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double DATACENTER_COST_MEM_EDEFAULT = null;
+	protected static final Double DATACENTER_COST_MEM_EDEFAULT = new Double(0.05);
 
 	/**
 	 * The cached value of the '{@link #getDatacenterCostMem() <em>Datacenter Cost Mem</em>}' attribute.
@@ -133,7 +133,7 @@ public class DatacenterImpl extends ComputeImpl implements Datacenter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double DATACENTER_COST_BW_EDEFAULT = null;
+	protected static final Double DATACENTER_COST_BW_EDEFAULT = new Double(0.0);
 
 	/**
 	 * The cached value of the '{@link #getDatacenterCostBw() <em>Datacenter Cost Bw</em>}' attribute.
@@ -153,7 +153,7 @@ public class DatacenterImpl extends ComputeImpl implements Datacenter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double DATACENTER_COST_STORGE_EDEFAULT = null;
+	protected static final Double DATACENTER_COST_STORGE_EDEFAULT = new Double(0.001);
 
 	/**
 	 * The cached value of the '{@link #getDatacenterCostStorge() <em>Datacenter Cost Storge</em>}' attribute.
@@ -173,7 +173,7 @@ public class DatacenterImpl extends ComputeImpl implements Datacenter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Double DATACENTER_COST_PROCESS_EDEFAULT = null;
+	protected static final Double DATACENTER_COST_PROCESS_EDEFAULT = new Double(3.0);
 
 	/**
 	 * The cached value of the '{@link #getDatacenterCostProcess() <em>Datacenter Cost Process</em>}' attribute.
@@ -193,7 +193,7 @@ public class DatacenterImpl extends ComputeImpl implements Datacenter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DATACENTER_VMM_EDEFAULT = null;
+	protected static final String DATACENTER_VMM_EDEFAULT = "Xen";
 
 	/**
 	 * The cached value of the '{@link #getDatacenterVmm() <em>Datacenter Vmm</em>}' attribute.
@@ -213,7 +213,7 @@ public class DatacenterImpl extends ComputeImpl implements Datacenter {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DATACENTER_NAME_EDEFAULT = null;
+	protected static final String DATACENTER_NAME_EDEFAULT = "datacenter";
 
 	/**
 	 * The cached value of the '{@link #getDatacenterName() <em>Datacenter Name</em>}' attribute.

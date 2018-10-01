@@ -12,11 +12,13 @@ import java.util.UUID;
 import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Configuration;
+import org.eclipse.cmf.occi.core.Kind;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 import occ.simulation.ElasticityType;
+import occ.simulation.impl.CloudletImpl;
 import occ.simulation.impl.HostImpl;
 import occ.simulation.impl.VmImpl;
 
@@ -41,31 +43,34 @@ public class Parser {
 		Map<Entity, Set<Entity>> entities = new HashMap<Entity, Set<Entity>>();
 
 		for(Resource resource : configuration.getResources()) {
-			for(Mixin mixin : resource.getMixins()) {
-				if(mixin.getScheme().contains("simulation")){
-					if(mixin.getTerm().contains("datacenter")){
-						Dc_Config dc = DcFromResource(resource);
-						entities.put(dc, new HashSet<Entity>());
-						System.out.println(dc);
-					}else if(mixin.getTerm().contains("host")){
-						Host_Config host = HostFromResource(resource);
-						entities.put(host, new HashSet<Entity>());
-						System.out.println(host);
-					}else if (mixin.getTerm().contains("vm")){
-						VM_Config vm = VMFromResource(resource);
-						entities.put(vm, new HashSet<Entity>());
-						System.out.println(vm);
-					}else if (mixin.getTerm().contains("cloudlet")){
-						Cloudlet_Config cloudlet = CloudletFromResource(resource);
-						entities.put(cloudlet, new HashSet<Entity>());
-						System.out.println(cloudlet);
-					}else if(mixin.getTerm().contains("HarddriveStorage")){ 
-						HarddriveStorage_Config hardDrive = HarddriveFromResource(resource);
-						entities.put(hardDrive, new HashSet<Entity>());
-						System.out.println(hardDrive);
-
-					}
-				}
+			Kind kind = resource.getKind();
+			System.out.println("Kind >>> "+resource.getKind());
+			if(kind.getName().equals("Datacenter"))
+			{
+				Dc_Config dc = DcFromResource(resource);
+				entities.put(dc, new HashSet<Entity>());
+				System.out.println(dc);
+			}else if(kind.getName().equals("Host")) {
+				Host_Config host = HostFromResource(resource);
+				entities.put(host, new HashSet<Entity>());
+				System.out.println(host);
+			}else if(kind.getName().equals("VM")) {
+				VM_Config vm = VMFromResource(resource);
+				entities.put(vm, new HashSet<Entity>());
+				System.out.println(vm);
+			}
+			else if(kind.getName().equals("Cloudlet")) {
+				Cloudlet_Config cloudlet = CloudletFromResource(resource);
+				entities.put(cloudlet, new HashSet<Entity>());
+				System.out.println(cloudlet);
+			}else if(kind.getName().equals("HarddriveStorage")) {
+				HarddriveStorage_Config hardDrive = HarddriveFromResource(resource);
+				entities.put(hardDrive, new HashSet<Entity>());
+				System.out.println(hardDrive);
+			}
+			else
+			{
+				System.out.println("This Kind is not yet implemented");
 			}
 		}
 
@@ -108,38 +113,18 @@ public class Parser {
 		int cloudletId=0,pesNumber=0;
 		long cloudletLength=0, cloudletFileSize=0, cloudletOutputSize=0;
 		String utilizationModelCpu="", utilizationModelRam="", utilizationModelBw="";
+		
+		CloudletImpl cloudlet = (CloudletImpl) resource;
 
-		for(Mixin m : resource.getMixins())
-		{
-			if(m.getTerm().equals("cloudlet"))
-			{
-				for(Attribute as: m.getAttributes())
-				{
-					System.out.println(as.getName()+" >>>> "+as.getDefault());
-					if(as.getName().equals("cloudletId")) cloudletId = Integer.parseInt(as.getDefault());
-					else if (as.getName().contains("cores")) pesNumber = Integer.parseInt(as.getDefault());
-					else if (as.getName().equals("cloudletLength")) cloudletLength = Long.parseLong(as.getDefault());
-					else if (as.getName().equals("cloudletFileSize")) cloudletFileSize = Long.parseLong(as.getDefault());
-					else if (as.getName().equals("cloudletOutputSize")) cloudletOutputSize = Long.parseLong(as.getDefault());
-					else if (as.getName().equals("utilizationModelCpu")) utilizationModelCpu = as.getDefault();
-					else if (as.getName().equals("utilizationModelRam")) utilizationModelRam = as.getDefault();
-					else if (as.getName().equals("utilizationModelBw")) utilizationModelBw = as.getDefault();
-				}
-			}
-		}
-
-
-		/*	for(AttributeState as : resource.getAttributes()) {
-			if(as.getName().equals("cloudletId")) cloudletId = Integer.parseInt(as.getValue());
-			else if (as.getName().contains("cores")) pesNumber = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("cloudletLength")) cloudletLength = Long.parseLong(as.getValue());
-			else if (as.getName().equals("cloudletFileSize")) cloudletFileSize = Long.parseLong(as.getValue());
-			else if (as.getName().equals("cloudletOutputSize")) cloudletOutputSize = Long.parseLong(as.getValue());
-			else if (as.getName().equals("utilizationModelCpu")) utilizationModelCpu = as.getValue();
-			else if (as.getName().equals("utilizationModelRam")) utilizationModelRam = as.getValue();
-			else if (as.getName().equals("utilizationModelBw")) utilizationModelBw = as.getValue();
-		}*/
-
+		cloudletId = cloudlet.getCloudletId();
+		pesNumber = cloudlet.getCloudletCores();
+		cloudletLength = cloudlet.getCloudletLength();
+		cloudletFileSize = cloudlet.getCloudletFileSize();
+		cloudletOutputSize = cloudlet.getCloudletOutputSize();
+		utilizationModelCpu = cloudlet.getCloudletUtilizationModelCpu().getLiteral();
+		utilizationModelRam = cloudlet.getCloudletUtilizationModelRam().getLiteral();
+		utilizationModelBw = cloudlet.getCloudletUtilizationModelBw().getLiteral();
+	
 		return new Cloudlet_Config(id, idTarget, cloudletId, pesNumber, cloudletLength, cloudletFileSize,
 				cloudletOutputSize, utilizationModelCpu, utilizationModelRam,
 				utilizationModelBw);
@@ -157,49 +142,19 @@ public class Parser {
 		String cloudletScheduler="";
 		String os="";
 		double irdto=0, dto=0, dti=0, irdt=0;
-		for(MixinBase m : resource.getParts())
-		{			
-			if(m.getMixin().getTerm().equals("vm"))
-			{
-				VmImpl vm = (VmImpl) m;
-				id_vm = vm.getVmId();
-				mips = 1000*vm.getVmMips();
-				numberOfPes = vm.getVmCores();
-				ram = vm.getVmRam();
-				bw = vm.getVmBw();
-				size = vm.getVmImageSize();
-				vmm = vm.getVmVmm();
-				cloudletScheduler = "CloudletSchedulerTimeShared";//To modify 
-				elastic_vm = vm.getVmElasticity();
-				os = vm.getVmOs();
-				/*irdto = vm.getIrdto();
-				dto =vm.getDto();
-				dti = vm.getDti();
-				irdt = vm.getIrdt();*/
-			}
-		}
-
-		/*for(AttributeState as : resource.getAttributes()) {
-			System.out.println(as.getName()+" >>>> "+as.getValue());
-			if(as.getName().equals("id_vm")) id_vm = Integer.parseInt(as.getValue());
-			else if (as.getName().contains("speed")  || as.getName().contains("mips")) mips = 1000*Double.parseDouble(as.getValue());
-			else if (as.getName().contains("cores")) numberOfPes = Integer.parseInt(as.getValue());
-			else if (as.getName().contains("memory")) ram = 1000*Integer.parseInt(as.getValue());//GB
-			else if (as.getName().equals("ram")) ram = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("bw")) bw = Long.parseLong(as.getValue());
-			else if (as.getName().equals("size")) size = Long.parseLong(as.getValue());
-			else if (as.getName().equals("vmm")) vmm = as.getValue();
-			else if (as.getName().equals("cloudletScheduler")) cloudletScheduler = as.getValue();
-			else if (as.getName().equals("ram_max_vm")) ram_max = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("ram_min_vm")) ram_min = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("elastic_vm")) elastic_vm = as.getValue();
-			else if (as.getName().equals("os")) os = as.getValue();
-			else if (as.getName().equals("irdto")) irdto = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("dto")) dto =Integer.parseInt( as.getValue());
-			else if (as.getName().equals("dti")) dti = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("irdt")) irdt = Integer.parseInt(as.getValue());
-
-		}*/
+		
+		VmImpl vm = (VmImpl) resource;
+		id_vm = vm.getVmId();
+		mips = 1000*vm.getVmMips();
+		numberOfPes = vm.getVmCores();
+		ram = vm.getVmRam();
+		bw = vm.getVmBw();
+		size = vm.getVmImageSize();
+		vmm = vm.getVmVmm();
+		cloudletScheduler = vm.getVmCloudletScheduler().getLiteral();//To modify 
+		elastic_vm = vm.getVmElasticity();
+		os = vm.getVmOs();
+		
 		//resource linked to VM
 		for(Link link : resource.getLinks()) {
 			if(link.getTarget().getKind().getTerm().contains("cloudlet")){
@@ -226,44 +181,20 @@ public class Parser {
 		long storage=0;
 		double mips=0;
 		int ram_max_host=0, ram_min_host=0, mips_max_host=0;
-
-		for(MixinBase mixin : resource.getParts()) {
-			System.out.println(mixin.getMixin().getName());
-			if(mixin.getMixin().getName().equals("host"))
-			{
-				HostImpl as = (HostImpl) mixin;
-				id_host = as.getHostId();
-				mips = 1000*as.getHostMips();
-				core = as.getHostCores();
-				ram = as.getHostRam();//MB
-				bw = as.getHostBw();
-				storage = as.getHostStorage();//MB
-				ramProvisioner = (as.getHostRamProvisionner() == null) ? "RamProvisionerSimple" : as.getHostRamProvisionner().toString();
-				bwProvisioner = (as.getHostBwProvisionner() == null) ? "BwProvisionerSimple" : as.getHostBwProvisionner().toString();
-				vmScheduler = (as.getHostVmScheduler() == null) ? "VmSchedulerTimeShared": as.getHostVmScheduler().toString();
-				peProvisioner = (as.getHostPeProvisionner() == null) ? "PeProvisionerSimple": as.getHostPeProvisionner().toString();
-				elastic_host = as.getHostElasticity();
-
-			}
-		}
-		/*for(AttributeState as : resource.getAttributes()) {
-			if(as.getName().equals("id_host")) id_host = Integer.parseInt(as.getValue());
-			else if (as.getName().contains("speed")  || as.getName().equals("mips")) mips = 1000*Double.parseDouble(as.getValue());
-			else if (as.getName().contains("cores")) core = Integer.parseInt(as.getValue());
-			//else if (as.getName().contains("memory")) ram = 1000*Integer.parseInt(as.getValue());//GB
-			else if (as.getName().equals("ram")) ram = Integer.parseInt(as.getValue());//MB
-			else if (as.getName().equals("bw")) bw = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("storage")) storage = Long.parseLong(as.getValue());//MB
-			else if (as.getName().equals("ramProvisioner")) ramProvisioner = as.getValue();
-			else if (as.getName().equals("bwProvisioner")) bwProvisioner = as.getValue();
-			else if (as.getName().equals("vmScheduler")) vmScheduler = as.getValue();
-			else if (as.getName().equals("peProvisioner")) peProvisioner = as.getValue();
-			else if (as.getName().equals("elastic_host")) elastic_host = as.getValue();
-			else if (as.getName().equals("ram_max_host")) ram_max_host = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("ram_min_host")) ram_min_host = Integer.parseInt(as.getValue());
-			else if (as.getName().equals("mips_max_host")) mips_max_host = Integer.parseInt(as.getValue());
-
-		}*/
+		
+		HostImpl host = (HostImpl) resource;
+		id_host = host.getHostId();
+		mips = 1000*host.getHostMips();
+		core = host.getHostCores();
+		ram = host.getHostRam();//MB
+		bw = host.getHostBw();
+		storage = host.getHostStorage();//MB
+		ramProvisioner = host.getHostRamProvisionner().getLiteral();
+		bwProvisioner = host.getHostBwProvisionner().getLiteral();
+		vmScheduler = host.getHostVmScheduler().getLiteral();
+		peProvisioner = host.getHostPeProvisionner().getLiteral();
+		elastic_host = host.getHostElasticity();
+		
 		//VM linked to host
 		for(Link link : resource.getLinks()) {
 			if(link.getTarget().getKind().getTerm().contains("vm")){
@@ -288,43 +219,23 @@ public class Parser {
 
 		String architecture = "", os="", vmm="", name="", location="";
 		double schedulingInterval= 0, timeZone=0, costPerSec=0, costPerMem=0, costPerStorage=0, costPerBw=0;
+		Kind kind = resource.getKind();
 
-		for(Mixin m : resource.getMixins())
+		for(Attribute as: kind.getAttributes())
 		{
-			if(m.getTerm().equals("datacenter"))
-			{
-				for(Attribute as: m.getAttributes())
-				{
-					System.out.println(as.getName()+" >>>> "+as.getDefault());
-					if(as.getName().contains("arch")) architecture = as.getDefault();
-					else if(as.getName().equals("os")) os = as.getDefault();
-					else if(as.getName().equals("vmm")) vmm = as.getDefault();
-					else if(as.getName().equals("time_zone")) timeZone = Double.parseDouble(as.getDefault());
-					else if(as.getName().equals("cost")) costPerSec = Double.parseDouble(as.getDefault());
-					else if(as.getName().equals("costPerMem")) costPerMem = Double.parseDouble(as.getDefault());
-					else if(as.getName().equals("costPerStorage")) costPerStorage = Double.parseDouble(as.getDefault());
-					else if(as.getName().equals("costPerBw")) costPerBw = Double.parseDouble(as.getDefault());
-					else if(as.getName().equals("name")) name = as.getDefault();
-					else if(as.getName().equals("schedulingInterval")) schedulingInterval = Double.parseDouble(as.getDefault());
-					else if(as.getName().equals("location")) location = as.getDefault();
-				}
-			}
+			System.out.println(as.getName()+" >>>> "+as.getDefault());
+			if(as.getName().contains("arch")) architecture = as.getDefault();
+			else if(as.getName().equals("datacenter.os")) os = as.getDefault();
+			else if(as.getName().equals("datacenter.vmm")) vmm = as.getDefault();
+			else if(as.getName().equals("datacenter.timezone")) timeZone = Double.parseDouble(as.getDefault());
+			else if(as.getName().equals("datacenter.cost.process")) costPerSec = Double.parseDouble(as.getDefault());
+			else if(as.getName().equals("datacenter.cost.mem")) costPerMem = Double.parseDouble(as.getDefault());
+			else if(as.getName().equals("datacenter.cost.storge")) costPerStorage = Double.parseDouble(as.getDefault());
+			else if(as.getName().equals("datacenter.cost.bw")) costPerBw = Double.parseDouble(as.getDefault());
+			else if(as.getName().equals("datacenter.name")) name = as.getDefault();
+			else if(as.getName().equals("schedulingInterval")) schedulingInterval = Double.parseDouble(as.getDefault());
+			else if(as.getName().equals("datacenter.location")) location = as.getDefault();
 		}
-
-		/*for(AttributeState as : resource.getAttributes()) {
-			if(as.getName().contains("arch")) architecture = as.getValue();
-			else if(as.getName().equals("os")) os = as.getValue();
-			else if(as.getName().equals("vmm")) vmm = as.getValue();
-			else if(as.getName().equals("time_zone")) timeZone = Double.parseDouble(as.getValue());
-			else if(as.getName().equals("cost")) costPerSec = Double.parseDouble(as.getValue());
-			else if(as.getName().equals("costPerMem")) costPerMem = Double.parseDouble(as.getValue());
-			else if(as.getName().equals("costPerStorage")) costPerStorage = Double.parseDouble(as.getValue());
-			else if(as.getName().equals("costPerBw")) costPerBw = Double.parseDouble(as.getValue());
-			else if(as.getName().equals("name")) name = as.getValue();
-			else if(as.getName().equals("schedulingInterval")) schedulingInterval = Double.parseDouble(as.getValue());
-			else if(as.getName().equals("location")) location = as.getValue();
-
-		}*/
 
 		//host linked to datacenter
 		for(Link link : resource.getLinks()) {

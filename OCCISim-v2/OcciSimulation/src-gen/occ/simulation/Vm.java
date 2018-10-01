@@ -46,6 +46,7 @@ import org.eclipse.cmf.occi.infrastructure.Compute;
 public interface Vm extends Compute {
 	/**
 	 * Returns the value of the '<em><b>Vm Id</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -54,7 +55,7 @@ public interface Vm extends Compute {
 	 * @return the value of the '<em>Vm Id</em>' attribute.
 	 * @see #setVmId(Integer)
 	 * @see occ.simulation.SimulationPackage#getVm_VmId()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="0" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmId'"
 	 * @generated
 	 */
@@ -72,6 +73,7 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Mips</b></em>' attribute.
+	 * The default value is <code>"1000"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -80,7 +82,7 @@ public interface Vm extends Compute {
 	 * @return the value of the '<em>Vm Mips</em>' attribute.
 	 * @see #setVmMips(Integer)
 	 * @see occ.simulation.SimulationPackage#getVm_VmMips()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="1000" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmMips'"
 	 * @generated
 	 */
@@ -98,6 +100,7 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Cores</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -106,7 +109,7 @@ public interface Vm extends Compute {
 	 * @return the value of the '<em>Vm Cores</em>' attribute.
 	 * @see #setVmCores(Integer)
 	 * @see occ.simulation.SimulationPackage#getVm_VmCores()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="1" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmCores'"
 	 * @generated
 	 */
@@ -124,6 +127,7 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Image Size</b></em>' attribute.
+	 * The default value is <code>"10000"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -132,7 +136,7 @@ public interface Vm extends Compute {
 	 * @return the value of the '<em>Vm Image Size</em>' attribute.
 	 * @see #setVmImageSize(Long)
 	 * @see occ.simulation.SimulationPackage#getVm_VmImageSize()
-	 * @model dataType="occ.simulation.Long"
+	 * @model default="10000" dataType="occ.simulation.Long"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmImageSize'"
 	 * @generated
 	 */
@@ -150,6 +154,7 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Bw</b></em>' attribute.
+	 * The default value is <code>"1000"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -158,7 +163,7 @@ public interface Vm extends Compute {
 	 * @return the value of the '<em>Vm Bw</em>' attribute.
 	 * @see #setVmBw(Long)
 	 * @see occ.simulation.SimulationPackage#getVm_VmBw()
-	 * @model dataType="occ.simulation.Long"
+	 * @model default="1000" dataType="occ.simulation.Long"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmBw'"
 	 * @generated
 	 */
@@ -176,6 +181,7 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Ram</b></em>' attribute.
+	 * The default value is <code>"512"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -184,7 +190,7 @@ public interface Vm extends Compute {
 	 * @return the value of the '<em>Vm Ram</em>' attribute.
 	 * @see #setVmRam(Integer)
 	 * @see occ.simulation.SimulationPackage#getVm_VmRam()
-	 * @model dataType="org.eclipse.cmf.occi.core.Integer"
+	 * @model default="512" dataType="org.eclipse.cmf.occi.core.Integer"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmRam'"
 	 * @generated
 	 */
@@ -202,6 +208,7 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Os</b></em>' attribute.
+	 * The default value is <code>"Linux"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -210,7 +217,7 @@ public interface Vm extends Compute {
 	 * @return the value of the '<em>Vm Os</em>' attribute.
 	 * @see #setVmOs(String)
 	 * @see occ.simulation.SimulationPackage#getVm_VmOs()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model default="Linux" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmOs'"
 	 * @generated
 	 */
@@ -228,32 +235,37 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Cloudlet Scheduler</b></em>' attribute.
+	 * The default value is <code>"CloudletSchedulerTimeShared"</code>.
+	 * The literals are from the enumeration {@link occ.simulation.CloudletScheduler}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Vm Cloudlet Scheduler</em>' attribute.
-	 * @see #setVmCloudletScheduler(Object)
+	 * @see occ.simulation.CloudletScheduler
+	 * @see #setVmCloudletScheduler(CloudletScheduler)
 	 * @see occ.simulation.SimulationPackage#getVm_VmCloudletScheduler()
-	 * @model dataType="occ.simulation.CloudletScheduler"
+	 * @model default="CloudletSchedulerTimeShared"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmCloudletScheduler'"
 	 * @generated
 	 */
-	Object getVmCloudletScheduler();
+	CloudletScheduler getVmCloudletScheduler();
 
 	/**
 	 * Sets the value of the '{@link occ.simulation.Vm#getVmCloudletScheduler <em>Vm Cloudlet Scheduler</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Vm Cloudlet Scheduler</em>' attribute.
+	 * @see occ.simulation.CloudletScheduler
 	 * @see #getVmCloudletScheduler()
 	 * @generated
 	 */
-	void setVmCloudletScheduler(Object value);
+	void setVmCloudletScheduler(CloudletScheduler value);
 
 	/**
 	 * Returns the value of the '<em><b>Vm Elasticity</b></em>' attribute.
+	 * The default value is <code>"None"</code>.
 	 * The literals are from the enumeration {@link occ.simulation.ElasticityType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -264,7 +276,8 @@ public interface Vm extends Compute {
 	 * @see occ.simulation.ElasticityType
 	 * @see #setVmElasticity(ElasticityType)
 	 * @see occ.simulation.SimulationPackage#getVm_VmElasticity()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmElasticity'"
+	 * @model default="None"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmElasticity'"
 	 * @generated
 	 */
 	ElasticityType getVmElasticity();
@@ -282,6 +295,7 @@ public interface Vm extends Compute {
 
 	/**
 	 * Returns the value of the '<em><b>Vm Vmm</b></em>' attribute.
+	 * The default value is <code>"Xen"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
@@ -290,7 +304,7 @@ public interface Vm extends Compute {
 	 * @return the value of the '<em>Vm Vmm</em>' attribute.
 	 * @see #setVmVmm(String)
 	 * @see occ.simulation.SimulationPackage#getVm_VmVmm()
-	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @model default="Xen" dataType="org.eclipse.cmf.occi.core.String"
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.ogf.org/occi/simulation/ecore!Vm!vmVmm'"
 	 * @generated
 	 */

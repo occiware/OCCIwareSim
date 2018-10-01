@@ -12,9 +12,13 @@
  */
 package occ.simulation.impl;
 
+import occ.simulation.BwProvisionner;
 import occ.simulation.ElasticityType;
 import occ.simulation.Host;
+import occ.simulation.PeProvisionner;
+import occ.simulation.RamProvisionner;
 import occ.simulation.SimulationPackage;
+import occ.simulation.VmScheduler;
 
 import org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl;
 
@@ -56,7 +60,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer HOST_ID_EDEFAULT = null;
+	protected static final Integer HOST_ID_EDEFAULT = new Integer(0);
 
 	/**
 	 * The cached value of the '{@link #getHostId() <em>Host Id</em>}' attribute.
@@ -76,7 +80,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object HOST_RAM_PROVISIONNER_EDEFAULT = null;
+	protected static final RamProvisionner HOST_RAM_PROVISIONNER_EDEFAULT = RamProvisionner.RAM_PROVISIONER_SIMPLE;
 
 	/**
 	 * The cached value of the '{@link #getHostRamProvisionner() <em>Host Ram Provisionner</em>}' attribute.
@@ -86,7 +90,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object hostRamProvisionner = HOST_RAM_PROVISIONNER_EDEFAULT;
+	protected RamProvisionner hostRamProvisionner = HOST_RAM_PROVISIONNER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHostBwProvisionner() <em>Host Bw Provisionner</em>}' attribute.
@@ -96,7 +100,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object HOST_BW_PROVISIONNER_EDEFAULT = null;
+	protected static final BwProvisionner HOST_BW_PROVISIONNER_EDEFAULT = BwProvisionner.BW_PROVISIONER_SIMPLE;
 
 	/**
 	 * The cached value of the '{@link #getHostBwProvisionner() <em>Host Bw Provisionner</em>}' attribute.
@@ -106,7 +110,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object hostBwProvisionner = HOST_BW_PROVISIONNER_EDEFAULT;
+	protected BwProvisionner hostBwProvisionner = HOST_BW_PROVISIONNER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHostStorage() <em>Host Storage</em>}' attribute.
@@ -116,7 +120,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Long HOST_STORAGE_EDEFAULT = null;
+	protected static final Long HOST_STORAGE_EDEFAULT = new Long(1000000L);
 
 	/**
 	 * The cached value of the '{@link #getHostStorage() <em>Host Storage</em>}' attribute.
@@ -136,7 +140,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer HOST_CORES_EDEFAULT = null;
+	protected static final Integer HOST_CORES_EDEFAULT = new Integer(1);
 
 	/**
 	 * The cached value of the '{@link #getHostCores() <em>Host Cores</em>}' attribute.
@@ -156,7 +160,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object HOST_VM_SCHEDULER_EDEFAULT = null;
+	protected static final VmScheduler HOST_VM_SCHEDULER_EDEFAULT = VmScheduler.VM_SCHEDULER_TIME_SHARED;
 
 	/**
 	 * The cached value of the '{@link #getHostVmScheduler() <em>Host Vm Scheduler</em>}' attribute.
@@ -166,7 +170,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object hostVmScheduler = HOST_VM_SCHEDULER_EDEFAULT;
+	protected VmScheduler hostVmScheduler = HOST_VM_SCHEDULER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHostRam() <em>Host Ram</em>}' attribute.
@@ -176,7 +180,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer HOST_RAM_EDEFAULT = null;
+	protected static final Integer HOST_RAM_EDEFAULT = new Integer(2048);
 
 	/**
 	 * The cached value of the '{@link #getHostRam() <em>Host Ram</em>}' attribute.
@@ -196,7 +200,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer HOST_MIPS_EDEFAULT = null;
+	protected static final Integer HOST_MIPS_EDEFAULT = new Integer(1000);
 
 	/**
 	 * The cached value of the '{@link #getHostMips() <em>Host Mips</em>}' attribute.
@@ -216,7 +220,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer HOST_BW_EDEFAULT = null;
+	protected static final Integer HOST_BW_EDEFAULT = new Integer(10000);
 
 	/**
 	 * The cached value of the '{@link #getHostBw() <em>Host Bw</em>}' attribute.
@@ -236,7 +240,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object HOST_PE_PROVISIONNER_EDEFAULT = null;
+	protected static final PeProvisionner HOST_PE_PROVISIONNER_EDEFAULT = PeProvisionner.PE_PROVISIONER_SIMPLE;
 
 	/**
 	 * The cached value of the '{@link #getHostPeProvisionner() <em>Host Pe Provisionner</em>}' attribute.
@@ -246,7 +250,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object hostPeProvisionner = HOST_PE_PROVISIONNER_EDEFAULT;
+	protected PeProvisionner hostPeProvisionner = HOST_PE_PROVISIONNER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getHostElasticity() <em>Host Elasticity</em>}' attribute.
@@ -313,7 +317,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getHostRamProvisionner() {
+	public RamProvisionner getHostRamProvisionner() {
 		return hostRamProvisionner;
 	}
 
@@ -322,9 +326,9 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHostRamProvisionner(Object newHostRamProvisionner) {
-		Object oldHostRamProvisionner = hostRamProvisionner;
-		hostRamProvisionner = newHostRamProvisionner;
+	public void setHostRamProvisionner(RamProvisionner newHostRamProvisionner) {
+		RamProvisionner oldHostRamProvisionner = hostRamProvisionner;
+		hostRamProvisionner = newHostRamProvisionner == null ? HOST_RAM_PROVISIONNER_EDEFAULT : newHostRamProvisionner;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.HOST__HOST_RAM_PROVISIONNER, oldHostRamProvisionner, hostRamProvisionner));
 	}
@@ -334,7 +338,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getHostBwProvisionner() {
+	public BwProvisionner getHostBwProvisionner() {
 		return hostBwProvisionner;
 	}
 
@@ -343,9 +347,9 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHostBwProvisionner(Object newHostBwProvisionner) {
-		Object oldHostBwProvisionner = hostBwProvisionner;
-		hostBwProvisionner = newHostBwProvisionner;
+	public void setHostBwProvisionner(BwProvisionner newHostBwProvisionner) {
+		BwProvisionner oldHostBwProvisionner = hostBwProvisionner;
+		hostBwProvisionner = newHostBwProvisionner == null ? HOST_BW_PROVISIONNER_EDEFAULT : newHostBwProvisionner;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.HOST__HOST_BW_PROVISIONNER, oldHostBwProvisionner, hostBwProvisionner));
 	}
@@ -397,7 +401,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getHostVmScheduler() {
+	public VmScheduler getHostVmScheduler() {
 		return hostVmScheduler;
 	}
 
@@ -406,9 +410,9 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHostVmScheduler(Object newHostVmScheduler) {
-		Object oldHostVmScheduler = hostVmScheduler;
-		hostVmScheduler = newHostVmScheduler;
+	public void setHostVmScheduler(VmScheduler newHostVmScheduler) {
+		VmScheduler oldHostVmScheduler = hostVmScheduler;
+		hostVmScheduler = newHostVmScheduler == null ? HOST_VM_SCHEDULER_EDEFAULT : newHostVmScheduler;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.HOST__HOST_VM_SCHEDULER, oldHostVmScheduler, hostVmScheduler));
 	}
@@ -481,7 +485,7 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getHostPeProvisionner() {
+	public PeProvisionner getHostPeProvisionner() {
 		return hostPeProvisionner;
 	}
 
@@ -490,9 +494,9 @@ public class HostImpl extends ComputeImpl implements Host {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setHostPeProvisionner(Object newHostPeProvisionner) {
-		Object oldHostPeProvisionner = hostPeProvisionner;
-		hostPeProvisionner = newHostPeProvisionner;
+	public void setHostPeProvisionner(PeProvisionner newHostPeProvisionner) {
+		PeProvisionner oldHostPeProvisionner = hostPeProvisionner;
+		hostPeProvisionner = newHostPeProvisionner == null ? HOST_PE_PROVISIONNER_EDEFAULT : newHostPeProvisionner;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.HOST__HOST_PE_PROVISIONNER, oldHostPeProvisionner, hostPeProvisionner));
 	}
@@ -564,10 +568,10 @@ public class HostImpl extends ComputeImpl implements Host {
 				setHostId((Integer)newValue);
 				return;
 			case SimulationPackage.HOST__HOST_RAM_PROVISIONNER:
-				setHostRamProvisionner(newValue);
+				setHostRamProvisionner((RamProvisionner)newValue);
 				return;
 			case SimulationPackage.HOST__HOST_BW_PROVISIONNER:
-				setHostBwProvisionner(newValue);
+				setHostBwProvisionner((BwProvisionner)newValue);
 				return;
 			case SimulationPackage.HOST__HOST_STORAGE:
 				setHostStorage((Long)newValue);
@@ -576,7 +580,7 @@ public class HostImpl extends ComputeImpl implements Host {
 				setHostCores((Integer)newValue);
 				return;
 			case SimulationPackage.HOST__HOST_VM_SCHEDULER:
-				setHostVmScheduler(newValue);
+				setHostVmScheduler((VmScheduler)newValue);
 				return;
 			case SimulationPackage.HOST__HOST_RAM:
 				setHostRam((Integer)newValue);
@@ -588,7 +592,7 @@ public class HostImpl extends ComputeImpl implements Host {
 				setHostBw((Integer)newValue);
 				return;
 			case SimulationPackage.HOST__HOST_PE_PROVISIONNER:
-				setHostPeProvisionner(newValue);
+				setHostPeProvisionner((PeProvisionner)newValue);
 				return;
 			case SimulationPackage.HOST__HOST_ELASTICITY:
 				setHostElasticity((ElasticityType)newValue);
@@ -653,15 +657,15 @@ public class HostImpl extends ComputeImpl implements Host {
 			case SimulationPackage.HOST__HOST_ID:
 				return HOST_ID_EDEFAULT == null ? hostId != null : !HOST_ID_EDEFAULT.equals(hostId);
 			case SimulationPackage.HOST__HOST_RAM_PROVISIONNER:
-				return HOST_RAM_PROVISIONNER_EDEFAULT == null ? hostRamProvisionner != null : !HOST_RAM_PROVISIONNER_EDEFAULT.equals(hostRamProvisionner);
+				return hostRamProvisionner != HOST_RAM_PROVISIONNER_EDEFAULT;
 			case SimulationPackage.HOST__HOST_BW_PROVISIONNER:
-				return HOST_BW_PROVISIONNER_EDEFAULT == null ? hostBwProvisionner != null : !HOST_BW_PROVISIONNER_EDEFAULT.equals(hostBwProvisionner);
+				return hostBwProvisionner != HOST_BW_PROVISIONNER_EDEFAULT;
 			case SimulationPackage.HOST__HOST_STORAGE:
 				return HOST_STORAGE_EDEFAULT == null ? hostStorage != null : !HOST_STORAGE_EDEFAULT.equals(hostStorage);
 			case SimulationPackage.HOST__HOST_CORES:
 				return HOST_CORES_EDEFAULT == null ? hostCores != null : !HOST_CORES_EDEFAULT.equals(hostCores);
 			case SimulationPackage.HOST__HOST_VM_SCHEDULER:
-				return HOST_VM_SCHEDULER_EDEFAULT == null ? hostVmScheduler != null : !HOST_VM_SCHEDULER_EDEFAULT.equals(hostVmScheduler);
+				return hostVmScheduler != HOST_VM_SCHEDULER_EDEFAULT;
 			case SimulationPackage.HOST__HOST_RAM:
 				return HOST_RAM_EDEFAULT == null ? hostRam != null : !HOST_RAM_EDEFAULT.equals(hostRam);
 			case SimulationPackage.HOST__HOST_MIPS:
@@ -669,7 +673,7 @@ public class HostImpl extends ComputeImpl implements Host {
 			case SimulationPackage.HOST__HOST_BW:
 				return HOST_BW_EDEFAULT == null ? hostBw != null : !HOST_BW_EDEFAULT.equals(hostBw);
 			case SimulationPackage.HOST__HOST_PE_PROVISIONNER:
-				return HOST_PE_PROVISIONNER_EDEFAULT == null ? hostPeProvisionner != null : !HOST_PE_PROVISIONNER_EDEFAULT.equals(hostPeProvisionner);
+				return hostPeProvisionner != HOST_PE_PROVISIONNER_EDEFAULT;
 			case SimulationPackage.HOST__HOST_ELASTICITY:
 				return hostElasticity != HOST_ELASTICITY_EDEFAULT;
 		}

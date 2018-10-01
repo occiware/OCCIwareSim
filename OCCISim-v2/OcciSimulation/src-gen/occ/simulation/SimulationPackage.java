@@ -2181,64 +2181,64 @@ public interface SimulationPackage extends EPackage {
 	int ELASTICITY_TYPE = 10;
 
 	/**
-	 * The meta object id for the '<em>Ram Provisionner</em>' data type.
+	 * The meta object id for the '{@link occ.simulation.CloudletScheduler <em>Cloudlet Scheduler</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
-	 * @see occ.simulation.impl.SimulationPackageImpl#getRamProvisionner()
-	 * @generated
-	 */
-	int RAM_PROVISIONNER = 11;
-
-	/**
-	 * The meta object id for the '<em>Bw Provisionner</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
-	 * @see occ.simulation.impl.SimulationPackageImpl#getBwProvisionner()
-	 * @generated
-	 */
-	int BW_PROVISIONNER = 12;
-
-	/**
-	 * The meta object id for the '<em>Pe Provisionner</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
-	 * @see occ.simulation.impl.SimulationPackageImpl#getPeProvisionner()
-	 * @generated
-	 */
-	int PE_PROVISIONNER = 13;
-
-	/**
-	 * The meta object id for the '<em>Vm Scheduler</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
-	 * @see occ.simulation.impl.SimulationPackageImpl#getVmScheduler()
-	 * @generated
-	 */
-	int VM_SCHEDULER = 14;
-
-	/**
-	 * The meta object id for the '<em>Cloudlet Scheduler</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
+	 * @see occ.simulation.CloudletScheduler
 	 * @see occ.simulation.impl.SimulationPackageImpl#getCloudletScheduler()
 	 * @generated
 	 */
-	int CLOUDLET_SCHEDULER = 15;
+	int CLOUDLET_SCHEDULER = 11;
 
 	/**
-	 * The meta object id for the '<em>utilization Model</em>' data type.
+	 * The meta object id for the '{@link occ.simulation.utilizationModel <em>utilization Model</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.lang.Object
+	 * @see occ.simulation.utilizationModel
 	 * @see occ.simulation.impl.SimulationPackageImpl#getutilizationModel()
 	 * @generated
 	 */
-	int UTILIZATION_MODEL = 16;
+	int UTILIZATION_MODEL = 12;
+
+	/**
+	 * The meta object id for the '{@link occ.simulation.VmScheduler <em>Vm Scheduler</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see occ.simulation.VmScheduler
+	 * @see occ.simulation.impl.SimulationPackageImpl#getVmScheduler()
+	 * @generated
+	 */
+	int VM_SCHEDULER = 13;
+
+	/**
+	 * The meta object id for the '{@link occ.simulation.PeProvisionner <em>Pe Provisionner</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see occ.simulation.PeProvisionner
+	 * @see occ.simulation.impl.SimulationPackageImpl#getPeProvisionner()
+	 * @generated
+	 */
+	int PE_PROVISIONNER = 14;
+
+	/**
+	 * The meta object id for the '{@link occ.simulation.RamProvisionner <em>Ram Provisionner</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see occ.simulation.RamProvisionner
+	 * @see occ.simulation.impl.SimulationPackageImpl#getRamProvisionner()
+	 * @generated
+	 */
+	int RAM_PROVISIONNER = 15;
+
+	/**
+	 * The meta object id for the '{@link occ.simulation.BwProvisionner <em>Bw Provisionner</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see occ.simulation.BwProvisionner
+	 * @see occ.simulation.impl.SimulationPackageImpl#getBwProvisionner()
+	 * @generated
+	 */
+	int BW_PROVISIONNER = 16;
 
 	/**
 	 * The meta object id for the '<em>double</em>' data type.
@@ -2822,70 +2822,64 @@ public interface SimulationPackage extends EPackage {
 	EEnum getElasticityType();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>Ram Provisionner</em>}'.
+	 * Returns the meta object for enum '{@link occ.simulation.CloudletScheduler <em>Cloudlet Scheduler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Ram Provisionner</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
+	 * @return the meta object for enum '<em>Cloudlet Scheduler</em>'.
+	 * @see occ.simulation.CloudletScheduler
 	 * @generated
 	 */
-	EDataType getRamProvisionner();
+	EEnum getCloudletScheduler();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>Bw Provisionner</em>}'.
+	 * Returns the meta object for enum '{@link occ.simulation.utilizationModel <em>utilization Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Bw Provisionner</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
+	 * @return the meta object for enum '<em>utilization Model</em>'.
+	 * @see occ.simulation.utilizationModel
 	 * @generated
 	 */
-	EDataType getBwProvisionner();
+	EEnum getutilizationModel();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>Pe Provisionner</em>}'.
+	 * Returns the meta object for enum '{@link occ.simulation.VmScheduler <em>Vm Scheduler</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Pe Provisionner</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
+	 * @return the meta object for enum '<em>Vm Scheduler</em>'.
+	 * @see occ.simulation.VmScheduler
 	 * @generated
 	 */
-	EDataType getPeProvisionner();
+	EEnum getVmScheduler();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>Vm Scheduler</em>}'.
+	 * Returns the meta object for enum '{@link occ.simulation.PeProvisionner <em>Pe Provisionner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Vm Scheduler</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
+	 * @return the meta object for enum '<em>Pe Provisionner</em>'.
+	 * @see occ.simulation.PeProvisionner
 	 * @generated
 	 */
-	EDataType getVmScheduler();
+	EEnum getPeProvisionner();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>Cloudlet Scheduler</em>}'.
+	 * Returns the meta object for enum '{@link occ.simulation.RamProvisionner <em>Ram Provisionner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Cloudlet Scheduler</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
+	 * @return the meta object for enum '<em>Ram Provisionner</em>'.
+	 * @see occ.simulation.RamProvisionner
 	 * @generated
 	 */
-	EDataType getCloudletScheduler();
+	EEnum getRamProvisionner();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Object <em>utilization Model</em>}'.
+	 * Returns the meta object for enum '{@link occ.simulation.BwProvisionner <em>Bw Provisionner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>utilization Model</em>'.
-	 * @see java.lang.Object
-	 * @model instanceClass="java.lang.Object"
+	 * @return the meta object for enum '<em>Bw Provisionner</em>'.
+	 * @see occ.simulation.BwProvisionner
 	 * @generated
 	 */
-	EDataType getutilizationModel();
+	EEnum getBwProvisionner();
 
 	/**
 	 * Returns the meta object for data type '{@link java.lang.Double <em>double</em>}'.
@@ -3371,64 +3365,64 @@ public interface SimulationPackage extends EPackage {
 		EEnum ELASTICITY_TYPE = eINSTANCE.getElasticityType();
 
 		/**
-		 * The meta object literal for the '<em>Ram Provisionner</em>' data type.
+		 * The meta object literal for the '{@link occ.simulation.CloudletScheduler <em>Cloudlet Scheduler</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
-		 * @see occ.simulation.impl.SimulationPackageImpl#getRamProvisionner()
-		 * @generated
-		 */
-		EDataType RAM_PROVISIONNER = eINSTANCE.getRamProvisionner();
-
-		/**
-		 * The meta object literal for the '<em>Bw Provisionner</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
-		 * @see occ.simulation.impl.SimulationPackageImpl#getBwProvisionner()
-		 * @generated
-		 */
-		EDataType BW_PROVISIONNER = eINSTANCE.getBwProvisionner();
-
-		/**
-		 * The meta object literal for the '<em>Pe Provisionner</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
-		 * @see occ.simulation.impl.SimulationPackageImpl#getPeProvisionner()
-		 * @generated
-		 */
-		EDataType PE_PROVISIONNER = eINSTANCE.getPeProvisionner();
-
-		/**
-		 * The meta object literal for the '<em>Vm Scheduler</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
-		 * @see occ.simulation.impl.SimulationPackageImpl#getVmScheduler()
-		 * @generated
-		 */
-		EDataType VM_SCHEDULER = eINSTANCE.getVmScheduler();
-
-		/**
-		 * The meta object literal for the '<em>Cloudlet Scheduler</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
+		 * @see occ.simulation.CloudletScheduler
 		 * @see occ.simulation.impl.SimulationPackageImpl#getCloudletScheduler()
 		 * @generated
 		 */
-		EDataType CLOUDLET_SCHEDULER = eINSTANCE.getCloudletScheduler();
+		EEnum CLOUDLET_SCHEDULER = eINSTANCE.getCloudletScheduler();
 
 		/**
-		 * The meta object literal for the '<em>utilization Model</em>' data type.
+		 * The meta object literal for the '{@link occ.simulation.utilizationModel <em>utilization Model</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.Object
+		 * @see occ.simulation.utilizationModel
 		 * @see occ.simulation.impl.SimulationPackageImpl#getutilizationModel()
 		 * @generated
 		 */
-		EDataType UTILIZATION_MODEL = eINSTANCE.getutilizationModel();
+		EEnum UTILIZATION_MODEL = eINSTANCE.getutilizationModel();
+
+		/**
+		 * The meta object literal for the '{@link occ.simulation.VmScheduler <em>Vm Scheduler</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see occ.simulation.VmScheduler
+		 * @see occ.simulation.impl.SimulationPackageImpl#getVmScheduler()
+		 * @generated
+		 */
+		EEnum VM_SCHEDULER = eINSTANCE.getVmScheduler();
+
+		/**
+		 * The meta object literal for the '{@link occ.simulation.PeProvisionner <em>Pe Provisionner</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see occ.simulation.PeProvisionner
+		 * @see occ.simulation.impl.SimulationPackageImpl#getPeProvisionner()
+		 * @generated
+		 */
+		EEnum PE_PROVISIONNER = eINSTANCE.getPeProvisionner();
+
+		/**
+		 * The meta object literal for the '{@link occ.simulation.RamProvisionner <em>Ram Provisionner</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see occ.simulation.RamProvisionner
+		 * @see occ.simulation.impl.SimulationPackageImpl#getRamProvisionner()
+		 * @generated
+		 */
+		EEnum RAM_PROVISIONNER = eINSTANCE.getRamProvisionner();
+
+		/**
+		 * The meta object literal for the '{@link occ.simulation.BwProvisionner <em>Bw Provisionner</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see occ.simulation.BwProvisionner
+		 * @see occ.simulation.impl.SimulationPackageImpl#getBwProvisionner()
+		 * @generated
+		 */
+		EEnum BW_PROVISIONNER = eINSTANCE.getBwProvisionner();
 
 		/**
 		 * The meta object literal for the '<em>double</em>' data type.

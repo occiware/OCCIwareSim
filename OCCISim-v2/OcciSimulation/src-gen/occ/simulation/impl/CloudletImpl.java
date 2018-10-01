@@ -14,6 +14,7 @@ package occ.simulation.impl;
 
 import occ.simulation.Cloudlet;
 import occ.simulation.SimulationPackage;
+import occ.simulation.utilizationModel;
 
 import org.eclipse.cmf.occi.infrastructure.impl.ComputeImpl;
 
@@ -52,7 +53,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer CLOUDLET_ID_EDEFAULT = null;
+	protected static final Integer CLOUDLET_ID_EDEFAULT = new Integer(0);
 
 	/**
 	 * The cached value of the '{@link #getCloudletId() <em>Cloudlet Id</em>}' attribute.
@@ -72,7 +73,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Long CLOUDLET_LENGTH_EDEFAULT = null;
+	protected static final Long CLOUDLET_LENGTH_EDEFAULT = new Long(400000L);
 
 	/**
 	 * The cached value of the '{@link #getCloudletLength() <em>Cloudlet Length</em>}' attribute.
@@ -92,7 +93,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer CLOUDLET_CORES_EDEFAULT = null;
+	protected static final Integer CLOUDLET_CORES_EDEFAULT = new Integer(1);
 
 	/**
 	 * The cached value of the '{@link #getCloudletCores() <em>Cloudlet Cores</em>}' attribute.
@@ -112,7 +113,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Long CLOUDLET_FILE_SIZE_EDEFAULT = null;
+	protected static final Long CLOUDLET_FILE_SIZE_EDEFAULT = new Long(300L);
 
 	/**
 	 * The cached value of the '{@link #getCloudletFileSize() <em>Cloudlet File Size</em>}' attribute.
@@ -132,7 +133,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Long CLOUDLET_OUTPUT_SIZE_EDEFAULT = null;
+	protected static final Long CLOUDLET_OUTPUT_SIZE_EDEFAULT = new Long(300L);
 
 	/**
 	 * The cached value of the '{@link #getCloudletOutputSize() <em>Cloudlet Output Size</em>}' attribute.
@@ -152,7 +153,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object CLOUDLET_UTILIZATION_MODEL_CPU_EDEFAULT = null;
+	protected static final utilizationModel CLOUDLET_UTILIZATION_MODEL_CPU_EDEFAULT = utilizationModel.UTILIZATION_MODEL_FULL;
 
 	/**
 	 * The cached value of the '{@link #getCloudletUtilizationModelCpu() <em>Cloudlet Utilization Model Cpu</em>}' attribute.
@@ -162,7 +163,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object cloudletUtilizationModelCpu = CLOUDLET_UTILIZATION_MODEL_CPU_EDEFAULT;
+	protected utilizationModel cloudletUtilizationModelCpu = CLOUDLET_UTILIZATION_MODEL_CPU_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCloudletUtilizationModelRam() <em>Cloudlet Utilization Model Ram</em>}' attribute.
@@ -172,7 +173,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object CLOUDLET_UTILIZATION_MODEL_RAM_EDEFAULT = null;
+	protected static final utilizationModel CLOUDLET_UTILIZATION_MODEL_RAM_EDEFAULT = utilizationModel.UTILIZATION_MODEL_FULL;
 
 	/**
 	 * The cached value of the '{@link #getCloudletUtilizationModelRam() <em>Cloudlet Utilization Model Ram</em>}' attribute.
@@ -182,7 +183,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object cloudletUtilizationModelRam = CLOUDLET_UTILIZATION_MODEL_RAM_EDEFAULT;
+	protected utilizationModel cloudletUtilizationModelRam = CLOUDLET_UTILIZATION_MODEL_RAM_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCloudletUtilizationModelBw() <em>Cloudlet Utilization Model Bw</em>}' attribute.
@@ -192,7 +193,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object CLOUDLET_UTILIZATION_MODEL_BW_EDEFAULT = null;
+	protected static final utilizationModel CLOUDLET_UTILIZATION_MODEL_BW_EDEFAULT = utilizationModel.UTILIZATION_MODEL_FULL;
 
 	/**
 	 * The cached value of the '{@link #getCloudletUtilizationModelBw() <em>Cloudlet Utilization Model Bw</em>}' attribute.
@@ -202,7 +203,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * @generated
 	 * @ordered
 	 */
-	protected Object cloudletUtilizationModelBw = CLOUDLET_UTILIZATION_MODEL_BW_EDEFAULT;
+	protected utilizationModel cloudletUtilizationModelBw = CLOUDLET_UTILIZATION_MODEL_BW_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -333,7 +334,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getCloudletUtilizationModelCpu() {
+	public utilizationModel getCloudletUtilizationModelCpu() {
 		return cloudletUtilizationModelCpu;
 	}
 
@@ -342,9 +343,9 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCloudletUtilizationModelCpu(Object newCloudletUtilizationModelCpu) {
-		Object oldCloudletUtilizationModelCpu = cloudletUtilizationModelCpu;
-		cloudletUtilizationModelCpu = newCloudletUtilizationModelCpu;
+	public void setCloudletUtilizationModelCpu(utilizationModel newCloudletUtilizationModelCpu) {
+		utilizationModel oldCloudletUtilizationModelCpu = cloudletUtilizationModelCpu;
+		cloudletUtilizationModelCpu = newCloudletUtilizationModelCpu == null ? CLOUDLET_UTILIZATION_MODEL_CPU_EDEFAULT : newCloudletUtilizationModelCpu;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_CPU, oldCloudletUtilizationModelCpu, cloudletUtilizationModelCpu));
 	}
@@ -354,7 +355,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getCloudletUtilizationModelRam() {
+	public utilizationModel getCloudletUtilizationModelRam() {
 		return cloudletUtilizationModelRam;
 	}
 
@@ -363,9 +364,9 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCloudletUtilizationModelRam(Object newCloudletUtilizationModelRam) {
-		Object oldCloudletUtilizationModelRam = cloudletUtilizationModelRam;
-		cloudletUtilizationModelRam = newCloudletUtilizationModelRam;
+	public void setCloudletUtilizationModelRam(utilizationModel newCloudletUtilizationModelRam) {
+		utilizationModel oldCloudletUtilizationModelRam = cloudletUtilizationModelRam;
+		cloudletUtilizationModelRam = newCloudletUtilizationModelRam == null ? CLOUDLET_UTILIZATION_MODEL_RAM_EDEFAULT : newCloudletUtilizationModelRam;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_RAM, oldCloudletUtilizationModelRam, cloudletUtilizationModelRam));
 	}
@@ -375,7 +376,7 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object getCloudletUtilizationModelBw() {
+	public utilizationModel getCloudletUtilizationModelBw() {
 		return cloudletUtilizationModelBw;
 	}
 
@@ -384,9 +385,9 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCloudletUtilizationModelBw(Object newCloudletUtilizationModelBw) {
-		Object oldCloudletUtilizationModelBw = cloudletUtilizationModelBw;
-		cloudletUtilizationModelBw = newCloudletUtilizationModelBw;
+	public void setCloudletUtilizationModelBw(utilizationModel newCloudletUtilizationModelBw) {
+		utilizationModel oldCloudletUtilizationModelBw = cloudletUtilizationModelBw;
+		cloudletUtilizationModelBw = newCloudletUtilizationModelBw == null ? CLOUDLET_UTILIZATION_MODEL_BW_EDEFAULT : newCloudletUtilizationModelBw;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_BW, oldCloudletUtilizationModelBw, cloudletUtilizationModelBw));
 	}
@@ -443,13 +444,13 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 				setCloudletOutputSize((Long)newValue);
 				return;
 			case SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_CPU:
-				setCloudletUtilizationModelCpu(newValue);
+				setCloudletUtilizationModelCpu((utilizationModel)newValue);
 				return;
 			case SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_RAM:
-				setCloudletUtilizationModelRam(newValue);
+				setCloudletUtilizationModelRam((utilizationModel)newValue);
 				return;
 			case SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_BW:
-				setCloudletUtilizationModelBw(newValue);
+				setCloudletUtilizationModelBw((utilizationModel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -510,11 +511,11 @@ public class CloudletImpl extends ComputeImpl implements Cloudlet {
 			case SimulationPackage.CLOUDLET__CLOUDLET_OUTPUT_SIZE:
 				return CLOUDLET_OUTPUT_SIZE_EDEFAULT == null ? cloudletOutputSize != null : !CLOUDLET_OUTPUT_SIZE_EDEFAULT.equals(cloudletOutputSize);
 			case SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_CPU:
-				return CLOUDLET_UTILIZATION_MODEL_CPU_EDEFAULT == null ? cloudletUtilizationModelCpu != null : !CLOUDLET_UTILIZATION_MODEL_CPU_EDEFAULT.equals(cloudletUtilizationModelCpu);
+				return cloudletUtilizationModelCpu != CLOUDLET_UTILIZATION_MODEL_CPU_EDEFAULT;
 			case SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_RAM:
-				return CLOUDLET_UTILIZATION_MODEL_RAM_EDEFAULT == null ? cloudletUtilizationModelRam != null : !CLOUDLET_UTILIZATION_MODEL_RAM_EDEFAULT.equals(cloudletUtilizationModelRam);
+				return cloudletUtilizationModelRam != CLOUDLET_UTILIZATION_MODEL_RAM_EDEFAULT;
 			case SimulationPackage.CLOUDLET__CLOUDLET_UTILIZATION_MODEL_BW:
-				return CLOUDLET_UTILIZATION_MODEL_BW_EDEFAULT == null ? cloudletUtilizationModelBw != null : !CLOUDLET_UTILIZATION_MODEL_BW_EDEFAULT.equals(cloudletUtilizationModelBw);
+				return cloudletUtilizationModelBw != CLOUDLET_UTILIZATION_MODEL_BW_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -136,18 +136,18 @@ public class SimulationValidator extends EObjectValidator {
 				return validateUpfront((Upfront)value, diagnostics, context);
 			case SimulationPackage.ELASTICITY_TYPE:
 				return validateElasticityType((ElasticityType)value, diagnostics, context);
-			case SimulationPackage.RAM_PROVISIONNER:
-				return validateRamProvisionner(value, diagnostics, context);
-			case SimulationPackage.BW_PROVISIONNER:
-				return validateBwProvisionner(value, diagnostics, context);
-			case SimulationPackage.PE_PROVISIONNER:
-				return validatePeProvisionner(value, diagnostics, context);
-			case SimulationPackage.VM_SCHEDULER:
-				return validateVmScheduler(value, diagnostics, context);
 			case SimulationPackage.CLOUDLET_SCHEDULER:
-				return validateCloudletScheduler(value, diagnostics, context);
+				return validateCloudletScheduler((CloudletScheduler)value, diagnostics, context);
 			case SimulationPackage.UTILIZATION_MODEL:
-				return validateutilizationModel(value, diagnostics, context);
+				return validateutilizationModel((utilizationModel)value, diagnostics, context);
+			case SimulationPackage.VM_SCHEDULER:
+				return validateVmScheduler((VmScheduler)value, diagnostics, context);
+			case SimulationPackage.PE_PROVISIONNER:
+				return validatePeProvisionner((PeProvisionner)value, diagnostics, context);
+			case SimulationPackage.RAM_PROVISIONNER:
+				return validateRamProvisionner((RamProvisionner)value, diagnostics, context);
+			case SimulationPackage.BW_PROVISIONNER:
+				return validateBwProvisionner((BwProvisionner)value, diagnostics, context);
 			case SimulationPackage.DOUBLE:
 				return validatedouble((Double)value, diagnostics, context);
 			case SimulationPackage.LONG:
@@ -395,7 +395,7 @@ public class SimulationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateRamProvisionner(Object ramProvisionner, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCloudletScheduler(CloudletScheduler cloudletScheduler, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -404,7 +404,7 @@ public class SimulationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateBwProvisionner(Object bwProvisionner, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateutilizationModel(utilizationModel utilizationModel, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -413,7 +413,7 @@ public class SimulationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePeProvisionner(Object peProvisionner, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateVmScheduler(VmScheduler vmScheduler, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -422,7 +422,7 @@ public class SimulationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateVmScheduler(Object vmScheduler, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePeProvisionner(PeProvisionner peProvisionner, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -431,7 +431,7 @@ public class SimulationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCloudletScheduler(Object cloudletScheduler, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateRamProvisionner(RamProvisionner ramProvisionner, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 
@@ -440,7 +440,7 @@ public class SimulationValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateutilizationModel(Object utilizationModel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateBwProvisionner(BwProvisionner bwProvisionner, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

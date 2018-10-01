@@ -12,21 +12,28 @@
  */
 package occ.simulation.impl;
 
+import occ.simulation.BwProvisionner;
 import occ.simulation.Cloudlet;
+import occ.simulation.CloudletScheduler;
 import occ.simulation.Datacenter;
 import occ.simulation.ElasticityType;
 import occ.simulation.Harddrive;
 import occ.simulation.Host;
 import occ.simulation.Ondemand;
+import occ.simulation.PeProvisionner;
 import occ.simulation.Pricestrategy;
+import occ.simulation.RamProvisionner;
 import occ.simulation.Sanstorage;
 import occ.simulation.SimulationFactory;
 import occ.simulation.SimulationPackage;
 import occ.simulation.Spot;
 import occ.simulation.Upfront;
 import occ.simulation.Vm;
+import occ.simulation.VmScheduler;
 
 import occ.simulation.util.SimulationValidator;
+
+import occ.simulation.utilizationModel;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
@@ -132,42 +139,42 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType ramProvisionnerEDataType = null;
+	private EEnum cloudletSchedulerEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType bwProvisionnerEDataType = null;
+	private EEnum utilizationModelEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType peProvisionnerEDataType = null;
+	private EEnum vmSchedulerEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType vmSchedulerEDataType = null;
+	private EEnum peProvisionnerEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType cloudletSchedulerEDataType = null;
+	private EEnum ramProvisionnerEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EDataType utilizationModelEDataType = null;
+	private EEnum bwProvisionnerEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -730,8 +737,8 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getRamProvisionner() {
-		return ramProvisionnerEDataType;
+	public EEnum getCloudletScheduler() {
+		return cloudletSchedulerEEnum;
 	}
 
 	/**
@@ -739,8 +746,8 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getBwProvisionner() {
-		return bwProvisionnerEDataType;
+	public EEnum getutilizationModel() {
+		return utilizationModelEEnum;
 	}
 
 	/**
@@ -748,8 +755,8 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getPeProvisionner() {
-		return peProvisionnerEDataType;
+	public EEnum getVmScheduler() {
+		return vmSchedulerEEnum;
 	}
 
 	/**
@@ -757,8 +764,8 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getVmScheduler() {
-		return vmSchedulerEDataType;
+	public EEnum getPeProvisionner() {
+		return peProvisionnerEEnum;
 	}
 
 	/**
@@ -766,8 +773,8 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getCloudletScheduler() {
-		return cloudletSchedulerEDataType;
+	public EEnum getRamProvisionner() {
+		return ramProvisionnerEEnum;
 	}
 
 	/**
@@ -775,8 +782,8 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDataType getutilizationModel() {
-		return utilizationModelEDataType;
+	public EEnum getBwProvisionner() {
+		return bwProvisionnerEEnum;
 	}
 
 	/**
@@ -888,14 +895,14 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 
 		// Create enums
 		elasticityTypeEEnum = createEEnum(ELASTICITY_TYPE);
+		cloudletSchedulerEEnum = createEEnum(CLOUDLET_SCHEDULER);
+		utilizationModelEEnum = createEEnum(UTILIZATION_MODEL);
+		vmSchedulerEEnum = createEEnum(VM_SCHEDULER);
+		peProvisionnerEEnum = createEEnum(PE_PROVISIONNER);
+		ramProvisionnerEEnum = createEEnum(RAM_PROVISIONNER);
+		bwProvisionnerEEnum = createEEnum(BW_PROVISIONNER);
 
 		// Create data types
-		ramProvisionnerEDataType = createEDataType(RAM_PROVISIONNER);
-		bwProvisionnerEDataType = createEDataType(BW_PROVISIONNER);
-		peProvisionnerEDataType = createEDataType(PE_PROVISIONNER);
-		vmSchedulerEDataType = createEDataType(VM_SCHEDULER);
-		cloudletSchedulerEDataType = createEDataType(CLOUDLET_SCHEDULER);
-		utilizationModelEDataType = createEDataType(UTILIZATION_MODEL);
 		doubleEDataType = createEDataType(DOUBLE);
 		longEDataType = createEDataType(LONG);
 	}
@@ -949,49 +956,49 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(datacenterEClass, Datacenter.class, "Datacenter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDatacenter_DatacenterOs(), theOCCIPackage.getString(), "datacenterOs", "Linux", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatacenter_DatacenterLocation(), theOCCIPackage.getString(), "datacenterLocation", null, 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatacenter_DatacenterTimezone(), this.getdouble(), "datacenterTimezone", null, 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatacenter_DatacenterCostMem(), this.getdouble(), "datacenterCostMem", null, 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatacenter_DatacenterCostBw(), this.getdouble(), "datacenterCostBw", null, 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatacenter_DatacenterCostStorge(), this.getdouble(), "datacenterCostStorge", null, 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatacenter_DatacenterCostProcess(), this.getdouble(), "datacenterCostProcess", null, 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatacenter_DatacenterVmm(), theOCCIPackage.getString(), "datacenterVmm", null, 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDatacenter_DatacenterName(), theOCCIPackage.getString(), "datacenterName", null, 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatacenter_DatacenterLocation(), theOCCIPackage.getString(), "datacenterLocation", "US East (N. Virginia)", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatacenter_DatacenterTimezone(), this.getdouble(), "datacenterTimezone", "10.0", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatacenter_DatacenterCostMem(), this.getdouble(), "datacenterCostMem", "0.05", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatacenter_DatacenterCostBw(), this.getdouble(), "datacenterCostBw", "0.0", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatacenter_DatacenterCostStorge(), this.getdouble(), "datacenterCostStorge", "0.001", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatacenter_DatacenterCostProcess(), this.getdouble(), "datacenterCostProcess", "3.0", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatacenter_DatacenterVmm(), theOCCIPackage.getString(), "datacenterVmm", "Xen", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDatacenter_DatacenterName(), theOCCIPackage.getString(), "datacenterName", "datacenter", 0, 1, Datacenter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(vmEClass, Vm.class, "Vm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVm_VmId(), theOCCIPackage.getInteger(), "vmId", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmMips(), theOCCIPackage.getInteger(), "vmMips", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmCores(), theOCCIPackage.getInteger(), "vmCores", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmImageSize(), this.getLong(), "vmImageSize", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmBw(), this.getLong(), "vmBw", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmRam(), theOCCIPackage.getInteger(), "vmRam", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmOs(), theOCCIPackage.getString(), "vmOs", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmCloudletScheduler(), this.getCloudletScheduler(), "vmCloudletScheduler", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmElasticity(), this.getElasticityType(), "vmElasticity", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVm_VmVmm(), theOCCIPackage.getString(), "vmVmm", null, 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmId(), theOCCIPackage.getInteger(), "vmId", "0", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmMips(), theOCCIPackage.getInteger(), "vmMips", "1000", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmCores(), theOCCIPackage.getInteger(), "vmCores", "1", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmImageSize(), this.getLong(), "vmImageSize", "10000", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmBw(), this.getLong(), "vmBw", "1000", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmRam(), theOCCIPackage.getInteger(), "vmRam", "512", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmOs(), theOCCIPackage.getString(), "vmOs", "Linux", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmCloudletScheduler(), this.getCloudletScheduler(), "vmCloudletScheduler", "CloudletSchedulerTimeShared", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmElasticity(), this.getElasticityType(), "vmElasticity", "None", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVm_VmVmm(), theOCCIPackage.getString(), "vmVmm", "Xen", 0, 1, Vm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(hostEClass, Host.class, "Host", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getHost_HostId(), theOCCIPackage.getInteger(), "hostId", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostRamProvisionner(), this.getRamProvisionner(), "hostRamProvisionner", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostBwProvisionner(), this.getBwProvisionner(), "hostBwProvisionner", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostStorage(), this.getLong(), "hostStorage", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostCores(), theOCCIPackage.getInteger(), "hostCores", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostVmScheduler(), this.getVmScheduler(), "hostVmScheduler", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostRam(), theOCCIPackage.getInteger(), "hostRam", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostMips(), theOCCIPackage.getInteger(), "hostMips", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostBw(), theOCCIPackage.getInteger(), "hostBw", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getHost_HostPeProvisionner(), this.getPeProvisionner(), "hostPeProvisionner", null, 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostId(), theOCCIPackage.getInteger(), "hostId", "0", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostRamProvisionner(), this.getRamProvisionner(), "hostRamProvisionner", "RamProvisionerSimple", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostBwProvisionner(), this.getBwProvisionner(), "hostBwProvisionner", "BwProvisionerSimple", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostStorage(), this.getLong(), "hostStorage", "1000000", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostCores(), theOCCIPackage.getInteger(), "hostCores", "1", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostVmScheduler(), this.getVmScheduler(), "hostVmScheduler", "VmSchedulerTimeShared", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostRam(), theOCCIPackage.getInteger(), "hostRam", "2048", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostMips(), theOCCIPackage.getInteger(), "hostMips", "1000", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostBw(), theOCCIPackage.getInteger(), "hostBw", "10000", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getHost_HostPeProvisionner(), this.getPeProvisionner(), "hostPeProvisionner", "PeProvisionerSimple", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHost_HostElasticity(), this.getElasticityType(), "hostElasticity", "None", 0, 1, Host.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cloudletEClass, Cloudlet.class, "Cloudlet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCloudlet_CloudletId(), theOCCIPackage.getInteger(), "cloudletId", null, 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCloudlet_CloudletLength(), this.getLong(), "cloudletLength", null, 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCloudlet_CloudletCores(), theOCCIPackage.getInteger(), "cloudletCores", null, 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCloudlet_CloudletFileSize(), this.getLong(), "cloudletFileSize", null, 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCloudlet_CloudletOutputSize(), this.getLong(), "cloudletOutputSize", null, 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCloudlet_CloudletUtilizationModelCpu(), this.getutilizationModel(), "cloudletUtilizationModelCpu", null, 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCloudlet_CloudletUtilizationModelRam(), this.getutilizationModel(), "cloudletUtilizationModelRam", null, 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCloudlet_CloudletUtilizationModelBw(), this.getutilizationModel(), "cloudletUtilizationModelBw", null, 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCloudlet_CloudletId(), theOCCIPackage.getInteger(), "cloudletId", "0", 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCloudlet_CloudletLength(), this.getLong(), "cloudletLength", "400000", 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCloudlet_CloudletCores(), theOCCIPackage.getInteger(), "cloudletCores", "1", 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCloudlet_CloudletFileSize(), this.getLong(), "cloudletFileSize", "300", 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCloudlet_CloudletOutputSize(), this.getLong(), "cloudletOutputSize", "300", 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCloudlet_CloudletUtilizationModelCpu(), this.getutilizationModel(), "cloudletUtilizationModelCpu", "UtilizationModelFull", 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCloudlet_CloudletUtilizationModelRam(), this.getutilizationModel(), "cloudletUtilizationModelRam", "UtilizationModelFull", 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCloudlet_CloudletUtilizationModelBw(), this.getutilizationModel(), "cloudletUtilizationModelBw", "UtilizationModelFull", 0, 1, Cloudlet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(harddriveEClass, Harddrive.class, "Harddrive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1022,13 +1029,30 @@ public class SimulationPackageImpl extends EPackageImpl implements SimulationPac
 		addEEnumLiteral(elasticityTypeEEnum, ElasticityType.VERTICAL);
 		addEEnumLiteral(elasticityTypeEEnum, ElasticityType.HORIZONTAL);
 
+		initEEnum(cloudletSchedulerEEnum, CloudletScheduler.class, "CloudletScheduler");
+		addEEnumLiteral(cloudletSchedulerEEnum, CloudletScheduler.CLOUDLET_SCHEDULER_SPACE_SHARED);
+		addEEnumLiteral(cloudletSchedulerEEnum, CloudletScheduler.CLOUDLET_SCHEDULER_TIME_SHARED);
+
+		initEEnum(utilizationModelEEnum, utilizationModel.class, "utilizationModel");
+		addEEnumLiteral(utilizationModelEEnum, utilizationModel.UTILIZATION_MODEL_FULL);
+		addEEnumLiteral(utilizationModelEEnum, utilizationModel.UTILIZATION_MODEL_NULL);
+		addEEnumLiteral(utilizationModelEEnum, utilizationModel.UTILIZATION_MODEL_PLANET_LAB_IN_MEMORY);
+		addEEnumLiteral(utilizationModelEEnum, utilizationModel.UTILIZATION_MODEL_STOCHASTIC);
+
+		initEEnum(vmSchedulerEEnum, VmScheduler.class, "VmScheduler");
+		addEEnumLiteral(vmSchedulerEEnum, VmScheduler.VM_SCHEDULER_SPACE_SHARED);
+		addEEnumLiteral(vmSchedulerEEnum, VmScheduler.VM_SCHEDULER_TIME_SHARED);
+
+		initEEnum(peProvisionnerEEnum, PeProvisionner.class, "PeProvisionner");
+		addEEnumLiteral(peProvisionnerEEnum, PeProvisionner.PE_PROVISIONER_SIMPLE);
+
+		initEEnum(ramProvisionnerEEnum, RamProvisionner.class, "RamProvisionner");
+		addEEnumLiteral(ramProvisionnerEEnum, RamProvisionner.RAM_PROVISIONER_SIMPLE);
+
+		initEEnum(bwProvisionnerEEnum, BwProvisionner.class, "BwProvisionner");
+		addEEnumLiteral(bwProvisionnerEEnum, BwProvisionner.BW_PROVISIONER_SIMPLE);
+
 		// Initialize data types
-		initEDataType(ramProvisionnerEDataType, Object.class, "RamProvisionner", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(bwProvisionnerEDataType, Object.class, "BwProvisionner", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(peProvisionnerEDataType, Object.class, "PeProvisionner", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(vmSchedulerEDataType, Object.class, "VmScheduler", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(cloudletSchedulerEDataType, Object.class, "CloudletScheduler", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(utilizationModelEDataType, Object.class, "utilizationModel", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(doubleEDataType, Double.class, "double", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(longEDataType, Long.class, "Long", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 

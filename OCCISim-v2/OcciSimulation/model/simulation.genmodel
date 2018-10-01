@@ -18,24 +18,57 @@
         <ecoreEnumLiteral href="simulation.ecore#//ElasticityType/Horizontal"/>
       </genEnumLiterals>
     </genEnums>
-    <genDataTypes>
-      <ecoreDataType href="simulation.ecore#//RamProvisionner"/>
-    </genDataTypes>
-    <genDataTypes>
-      <ecoreDataType href="simulation.ecore#//BwProvisionner"/>
-    </genDataTypes>
-    <genDataTypes>
-      <ecoreDataType href="simulation.ecore#//PeProvisionner"/>
-    </genDataTypes>
-    <genDataTypes>
-      <ecoreDataType href="simulation.ecore#//VmScheduler"/>
-    </genDataTypes>
-    <genDataTypes>
-      <ecoreDataType href="simulation.ecore#//CloudletScheduler"/>
-    </genDataTypes>
-    <genDataTypes>
-      <ecoreDataType href="simulation.ecore#//utilizationModel"/>
-    </genDataTypes>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="simulation.ecore#//CloudletScheduler"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//CloudletScheduler/CloudletSchedulerSpaceShared"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//CloudletScheduler/CloudletSchedulerTimeShared"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="simulation.ecore#//utilizationModel"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//utilizationModel/UtilizationModelFull"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//utilizationModel/UtilizationModelNull"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//utilizationModel/UtilizationModelPlanetLabInMemory"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//utilizationModel/UtilizationModelStochastic"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="simulation.ecore#//VmScheduler"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//VmScheduler/VmSchedulerSpaceShared"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//VmScheduler/VmSchedulerTimeShared"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="simulation.ecore#//PeProvisionner"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//PeProvisionner/PeProvisionerSimple"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="simulation.ecore#//RamProvisionner"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//RamProvisionner/RamProvisionerSimple"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="simulation.ecore#//BwProvisionner"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="simulation.ecore#//BwProvisionner/BwProvisionerSimple"/>
+      </genEnumLiterals>
+    </genEnums>
     <genDataTypes>
       <ecoreDataType href="simulation.ecore#//double"/>
     </genDataTypes>

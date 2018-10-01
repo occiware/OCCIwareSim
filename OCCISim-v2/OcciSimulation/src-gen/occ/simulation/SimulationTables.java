@@ -67,15 +67,15 @@ public class SimulationTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Pricestrategy = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getClassId("Pricestrategy", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_BwProvisionner = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getDataTypeId("BwProvisionner", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_CloudletScheduler = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getDataTypeId("CloudletScheduler", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Long = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getDataTypeId("Long", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_PeProvisionner = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getDataTypeId("PeProvisionner", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_RamProvisionner = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getDataTypeId("RamProvisionner", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_VmScheduler = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getDataTypeId("VmScheduler", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_double = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getDataTypeId("double", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_utilizationModel = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getDataTypeId("utilizationModel", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_BwProvisionner = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getEnumerationId("BwProvisionner");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_CloudletScheduler = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getEnumerationId("CloudletScheduler");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_ElasticityType = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getEnumerationId("ElasticityType");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_PeProvisionner = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getEnumerationId("PeProvisionner");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_RamProvisionner = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getEnumerationId("RamProvisionner");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_VmScheduler = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getEnumerationId("VmScheduler");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.EnumerationId ENUMid_utilizationModel = occ.simulation.SimulationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_simulation_s_ecore.getEnumerationId("utilizationModel");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
 	public static final /*@NonInvalid*/ java.lang.String STR_Pricestrategy_c_c_appliesConstraint = "Pricestrategy::appliesConstraint";
 
@@ -107,25 +107,25 @@ public class SimulationTables
 			TypeParameters.init();
 		}
 
-		public static final /*@NonNull*/ EcoreExecutorType _BwProvisionner = new EcoreExecutorType("BwProvisionner", PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumeration _BwProvisionner = new EcoreExecutorEnumeration(SimulationPackage.Literals.BW_PROVISIONNER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Cloudlet = new EcoreExecutorType(SimulationPackage.Literals.CLOUDLET, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _CloudletScheduler = new EcoreExecutorType("CloudletScheduler", PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumeration _CloudletScheduler = new EcoreExecutorEnumeration(SimulationPackage.Literals.CLOUDLET_SCHEDULER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Datacenter = new EcoreExecutorType(SimulationPackage.Literals.DATACENTER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorEnumeration _ElasticityType = new EcoreExecutorEnumeration(SimulationPackage.Literals.ELASTICITY_TYPE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Harddrive = new EcoreExecutorType(SimulationPackage.Literals.HARDDRIVE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Host = new EcoreExecutorType(SimulationPackage.Literals.HOST, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Long = new EcoreExecutorType("Long", PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Ondemand = new EcoreExecutorType(SimulationPackage.Literals.ONDEMAND, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _PeProvisionner = new EcoreExecutorType("PeProvisionner", PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumeration _PeProvisionner = new EcoreExecutorEnumeration(SimulationPackage.Literals.PE_PROVISIONNER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Pricestrategy = new EcoreExecutorType(SimulationPackage.Literals.PRICESTRATEGY, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _RamProvisionner = new EcoreExecutorType("RamProvisionner", PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumeration _RamProvisionner = new EcoreExecutorEnumeration(SimulationPackage.Literals.RAM_PROVISIONNER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Sanstorage = new EcoreExecutorType(SimulationPackage.Literals.SANSTORAGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Spot = new EcoreExecutorType(SimulationPackage.Literals.SPOT, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Upfront = new EcoreExecutorType(SimulationPackage.Literals.UPFRONT, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Vm = new EcoreExecutorType(SimulationPackage.Literals.VM, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _VmScheduler = new EcoreExecutorType("VmScheduler", PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumeration _VmScheduler = new EcoreExecutorEnumeration(SimulationPackage.Literals.VM_SCHEDULER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _double = new EcoreExecutorType("double", PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _utilizationModel = new EcoreExecutorType("utilizationModel", PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumeration _utilizationModel = new EcoreExecutorEnumeration(SimulationPackage.Literals.UTILIZATION_MODEL, PACKAGE, 0);
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
 			_BwProvisionner,
@@ -174,6 +174,9 @@ public class SimulationTables
 
 		private static final /*@NonNull*/ ExecutorFragment _BwProvisionner__BwProvisionner = new ExecutorFragment(Types._BwProvisionner, SimulationTables.Types._BwProvisionner);
 		private static final /*@NonNull*/ ExecutorFragment _BwProvisionner__OclAny = new ExecutorFragment(Types._BwProvisionner, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _BwProvisionner__OclElement = new ExecutorFragment(Types._BwProvisionner, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _BwProvisionner__OclEnumeration = new ExecutorFragment(Types._BwProvisionner, OCLstdlibTables.Types._OclEnumeration);
+		private static final /*@NonNull*/ ExecutorFragment _BwProvisionner__OclType = new ExecutorFragment(Types._BwProvisionner, OCLstdlibTables.Types._OclType);
 
 		private static final /*@NonNull*/ ExecutorFragment _Cloudlet__Cloudlet = new ExecutorFragment(Types._Cloudlet, SimulationTables.Types._Cloudlet);
 		private static final /*@NonNull*/ ExecutorFragment _Cloudlet__Compute = new ExecutorFragment(Types._Cloudlet, InfrastructureTables.Types._Compute);
@@ -184,6 +187,9 @@ public class SimulationTables
 
 		private static final /*@NonNull*/ ExecutorFragment _CloudletScheduler__CloudletScheduler = new ExecutorFragment(Types._CloudletScheduler, SimulationTables.Types._CloudletScheduler);
 		private static final /*@NonNull*/ ExecutorFragment _CloudletScheduler__OclAny = new ExecutorFragment(Types._CloudletScheduler, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _CloudletScheduler__OclElement = new ExecutorFragment(Types._CloudletScheduler, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _CloudletScheduler__OclEnumeration = new ExecutorFragment(Types._CloudletScheduler, OCLstdlibTables.Types._OclEnumeration);
+		private static final /*@NonNull*/ ExecutorFragment _CloudletScheduler__OclType = new ExecutorFragment(Types._CloudletScheduler, OCLstdlibTables.Types._OclType);
 
 		private static final /*@NonNull*/ ExecutorFragment _Datacenter__Compute = new ExecutorFragment(Types._Datacenter, InfrastructureTables.Types._Compute);
 		private static final /*@NonNull*/ ExecutorFragment _Datacenter__Datacenter = new ExecutorFragment(Types._Datacenter, SimulationTables.Types._Datacenter);
@@ -222,6 +228,9 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment _Ondemand__Pricestrategy = new ExecutorFragment(Types._Ondemand, SimulationTables.Types._Pricestrategy);
 
 		private static final /*@NonNull*/ ExecutorFragment _PeProvisionner__OclAny = new ExecutorFragment(Types._PeProvisionner, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _PeProvisionner__OclElement = new ExecutorFragment(Types._PeProvisionner, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _PeProvisionner__OclEnumeration = new ExecutorFragment(Types._PeProvisionner, OCLstdlibTables.Types._OclEnumeration);
+		private static final /*@NonNull*/ ExecutorFragment _PeProvisionner__OclType = new ExecutorFragment(Types._PeProvisionner, OCLstdlibTables.Types._OclType);
 		private static final /*@NonNull*/ ExecutorFragment _PeProvisionner__PeProvisionner = new ExecutorFragment(Types._PeProvisionner, SimulationTables.Types._PeProvisionner);
 
 		private static final /*@NonNull*/ ExecutorFragment _Pricestrategy__MixinBase = new ExecutorFragment(Types._Pricestrategy, OCCITables.Types._MixinBase);
@@ -230,6 +239,9 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment _Pricestrategy__Pricestrategy = new ExecutorFragment(Types._Pricestrategy, SimulationTables.Types._Pricestrategy);
 
 		private static final /*@NonNull*/ ExecutorFragment _RamProvisionner__OclAny = new ExecutorFragment(Types._RamProvisionner, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _RamProvisionner__OclElement = new ExecutorFragment(Types._RamProvisionner, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _RamProvisionner__OclEnumeration = new ExecutorFragment(Types._RamProvisionner, OCLstdlibTables.Types._OclEnumeration);
+		private static final /*@NonNull*/ ExecutorFragment _RamProvisionner__OclType = new ExecutorFragment(Types._RamProvisionner, OCLstdlibTables.Types._OclType);
 		private static final /*@NonNull*/ ExecutorFragment _RamProvisionner__RamProvisionner = new ExecutorFragment(Types._RamProvisionner, SimulationTables.Types._RamProvisionner);
 
 		private static final /*@NonNull*/ ExecutorFragment _Sanstorage__Entity = new ExecutorFragment(Types._Sanstorage, OCCITables.Types._Entity);
@@ -259,12 +271,18 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment _Vm__Vm = new ExecutorFragment(Types._Vm, SimulationTables.Types._Vm);
 
 		private static final /*@NonNull*/ ExecutorFragment _VmScheduler__OclAny = new ExecutorFragment(Types._VmScheduler, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _VmScheduler__OclElement = new ExecutorFragment(Types._VmScheduler, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _VmScheduler__OclEnumeration = new ExecutorFragment(Types._VmScheduler, OCLstdlibTables.Types._OclEnumeration);
+		private static final /*@NonNull*/ ExecutorFragment _VmScheduler__OclType = new ExecutorFragment(Types._VmScheduler, OCLstdlibTables.Types._OclType);
 		private static final /*@NonNull*/ ExecutorFragment _VmScheduler__VmScheduler = new ExecutorFragment(Types._VmScheduler, SimulationTables.Types._VmScheduler);
 
 		private static final /*@NonNull*/ ExecutorFragment _double__OclAny = new ExecutorFragment(Types._double, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _double__double = new ExecutorFragment(Types._double, SimulationTables.Types._double);
 
 		private static final /*@NonNull*/ ExecutorFragment _utilizationModel__OclAny = new ExecutorFragment(Types._utilizationModel, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _utilizationModel__OclElement = new ExecutorFragment(Types._utilizationModel, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _utilizationModel__OclEnumeration = new ExecutorFragment(Types._utilizationModel, OCLstdlibTables.Types._OclEnumeration);
+		private static final /*@NonNull*/ ExecutorFragment _utilizationModel__OclType = new ExecutorFragment(Types._utilizationModel, OCLstdlibTables.Types._OclType);
 		private static final /*@NonNull*/ ExecutorFragment _utilizationModel__utilizationModel = new ExecutorFragment(Types._utilizationModel, SimulationTables.Types._utilizationModel);
 
 		static {
@@ -404,9 +422,12 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _BwProvisionner =
 			{
 				Fragments._BwProvisionner__OclAny /* 0 */,
-				Fragments._BwProvisionner__BwProvisionner /* 1 */
+				Fragments._BwProvisionner__OclElement /* 1 */,
+				Fragments._BwProvisionner__OclType /* 2 */,
+				Fragments._BwProvisionner__OclEnumeration /* 3 */,
+				Fragments._BwProvisionner__BwProvisionner /* 4 */
 			};
-		private static final int /*@NonNull*/ [] __BwProvisionner = { 1,1 };
+		private static final int /*@NonNull*/ [] __BwProvisionner = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Cloudlet =
 			{
@@ -422,9 +443,12 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _CloudletScheduler =
 			{
 				Fragments._CloudletScheduler__OclAny /* 0 */,
-				Fragments._CloudletScheduler__CloudletScheduler /* 1 */
+				Fragments._CloudletScheduler__OclElement /* 1 */,
+				Fragments._CloudletScheduler__OclType /* 2 */,
+				Fragments._CloudletScheduler__OclEnumeration /* 3 */,
+				Fragments._CloudletScheduler__CloudletScheduler /* 4 */
 			};
-		private static final int /*@NonNull*/ [] __CloudletScheduler = { 1,1 };
+		private static final int /*@NonNull*/ [] __CloudletScheduler = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Datacenter =
 			{
@@ -489,9 +513,12 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _PeProvisionner =
 			{
 				Fragments._PeProvisionner__OclAny /* 0 */,
-				Fragments._PeProvisionner__PeProvisionner /* 1 */
+				Fragments._PeProvisionner__OclElement /* 1 */,
+				Fragments._PeProvisionner__OclType /* 2 */,
+				Fragments._PeProvisionner__OclEnumeration /* 3 */,
+				Fragments._PeProvisionner__PeProvisionner /* 4 */
 			};
-		private static final int /*@NonNull*/ [] __PeProvisionner = { 1,1 };
+		private static final int /*@NonNull*/ [] __PeProvisionner = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Pricestrategy =
 			{
@@ -505,9 +532,12 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _RamProvisionner =
 			{
 				Fragments._RamProvisionner__OclAny /* 0 */,
-				Fragments._RamProvisionner__RamProvisionner /* 1 */
+				Fragments._RamProvisionner__OclElement /* 1 */,
+				Fragments._RamProvisionner__OclType /* 2 */,
+				Fragments._RamProvisionner__OclEnumeration /* 3 */,
+				Fragments._RamProvisionner__RamProvisionner /* 4 */
 			};
-		private static final int /*@NonNull*/ [] __RamProvisionner = { 1,1 };
+		private static final int /*@NonNull*/ [] __RamProvisionner = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Sanstorage =
 			{
@@ -554,9 +584,12 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _VmScheduler =
 			{
 				Fragments._VmScheduler__OclAny /* 0 */,
-				Fragments._VmScheduler__VmScheduler /* 1 */
+				Fragments._VmScheduler__OclElement /* 1 */,
+				Fragments._VmScheduler__OclType /* 2 */,
+				Fragments._VmScheduler__OclEnumeration /* 3 */,
+				Fragments._VmScheduler__VmScheduler /* 4 */
 			};
-		private static final int /*@NonNull*/ [] __VmScheduler = { 1,1 };
+		private static final int /*@NonNull*/ [] __VmScheduler = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _double =
 			{
@@ -568,9 +601,12 @@ public class SimulationTables
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _utilizationModel =
 			{
 				Fragments._utilizationModel__OclAny /* 0 */,
-				Fragments._utilizationModel__utilizationModel /* 1 */
+				Fragments._utilizationModel__OclElement /* 1 */,
+				Fragments._utilizationModel__OclType /* 2 */,
+				Fragments._utilizationModel__OclEnumeration /* 3 */,
+				Fragments._utilizationModel__utilizationModel /* 4 */
 			};
-		private static final int /*@NonNull*/ [] __utilizationModel = { 1,1 };
+		private static final int /*@NonNull*/ [] __utilizationModel = { 1,1,1,1,1 };
 
 		/**
 		 *	Install the fragment descriptors in the class descriptors.
@@ -631,6 +667,21 @@ public class SimulationTables
 			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _BwProvisionner__OclElement = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _BwProvisionner__OclEnumeration = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _BwProvisionner__OclType = {
+			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cloudlet__Cloudlet = {};
@@ -696,6 +747,21 @@ public class SimulationTables
 			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _CloudletScheduler__OclElement = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _CloudletScheduler__OclEnumeration = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _CloudletScheduler__OclType = {
+			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Datacenter__Datacenter = {};
@@ -934,6 +1000,21 @@ public class SimulationTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _PeProvisionner__OclElement = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _PeProvisionner__OclEnumeration = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _PeProvisionner__OclType = {
+			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
+		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Pricestrategy__Pricestrategy = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Pricestrategy__MixinBase = {};
@@ -981,6 +1062,21 @@ public class SimulationTables
 			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RamProvisionner__OclElement = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RamProvisionner__OclEnumeration = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _RamProvisionner__OclType = {
+			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Sanstorage__Sanstorage = {};
@@ -1150,6 +1246,21 @@ public class SimulationTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _VmScheduler__OclElement = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _VmScheduler__OclEnumeration = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _VmScheduler__OclType = {
+			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
+		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _double__double = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _double__OclAny = {
@@ -1188,6 +1299,21 @@ public class SimulationTables
 			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
 			OCLstdlibTables.Operations._OclAny__toString /* toString() */
 		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _utilizationModel__OclElement = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _utilizationModel__OclEnumeration = {
+			OCLstdlibTables.Operations._OclEnumeration__allInstances /* allInstances() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _utilizationModel__OclType = {
+			OCLstdlibTables.Operations._OclType__conformsTo /* conformsTo(OclType[?]) */
+		};
 
 		/*
 		 *	Install the operation descriptors in the fragment descriptors.
@@ -1195,6 +1321,9 @@ public class SimulationTables
 		static {
 			Fragments._BwProvisionner__BwProvisionner.initOperations(_BwProvisionner__BwProvisionner);
 			Fragments._BwProvisionner__OclAny.initOperations(_BwProvisionner__OclAny);
+			Fragments._BwProvisionner__OclElement.initOperations(_BwProvisionner__OclElement);
+			Fragments._BwProvisionner__OclEnumeration.initOperations(_BwProvisionner__OclEnumeration);
+			Fragments._BwProvisionner__OclType.initOperations(_BwProvisionner__OclType);
 
 			Fragments._Cloudlet__Cloudlet.initOperations(_Cloudlet__Cloudlet);
 			Fragments._Cloudlet__Compute.initOperations(_Cloudlet__Compute);
@@ -1205,6 +1334,9 @@ public class SimulationTables
 
 			Fragments._CloudletScheduler__CloudletScheduler.initOperations(_CloudletScheduler__CloudletScheduler);
 			Fragments._CloudletScheduler__OclAny.initOperations(_CloudletScheduler__OclAny);
+			Fragments._CloudletScheduler__OclElement.initOperations(_CloudletScheduler__OclElement);
+			Fragments._CloudletScheduler__OclEnumeration.initOperations(_CloudletScheduler__OclEnumeration);
+			Fragments._CloudletScheduler__OclType.initOperations(_CloudletScheduler__OclType);
 
 			Fragments._Datacenter__Compute.initOperations(_Datacenter__Compute);
 			Fragments._Datacenter__Datacenter.initOperations(_Datacenter__Datacenter);
@@ -1243,6 +1375,9 @@ public class SimulationTables
 			Fragments._Ondemand__Pricestrategy.initOperations(_Ondemand__Pricestrategy);
 
 			Fragments._PeProvisionner__OclAny.initOperations(_PeProvisionner__OclAny);
+			Fragments._PeProvisionner__OclElement.initOperations(_PeProvisionner__OclElement);
+			Fragments._PeProvisionner__OclEnumeration.initOperations(_PeProvisionner__OclEnumeration);
+			Fragments._PeProvisionner__OclType.initOperations(_PeProvisionner__OclType);
 			Fragments._PeProvisionner__PeProvisionner.initOperations(_PeProvisionner__PeProvisionner);
 
 			Fragments._Pricestrategy__MixinBase.initOperations(_Pricestrategy__MixinBase);
@@ -1251,6 +1386,9 @@ public class SimulationTables
 			Fragments._Pricestrategy__Pricestrategy.initOperations(_Pricestrategy__Pricestrategy);
 
 			Fragments._RamProvisionner__OclAny.initOperations(_RamProvisionner__OclAny);
+			Fragments._RamProvisionner__OclElement.initOperations(_RamProvisionner__OclElement);
+			Fragments._RamProvisionner__OclEnumeration.initOperations(_RamProvisionner__OclEnumeration);
+			Fragments._RamProvisionner__OclType.initOperations(_RamProvisionner__OclType);
 			Fragments._RamProvisionner__RamProvisionner.initOperations(_RamProvisionner__RamProvisionner);
 
 			Fragments._Sanstorage__Entity.initOperations(_Sanstorage__Entity);
@@ -1280,12 +1418,18 @@ public class SimulationTables
 			Fragments._Vm__Vm.initOperations(_Vm__Vm);
 
 			Fragments._VmScheduler__OclAny.initOperations(_VmScheduler__OclAny);
+			Fragments._VmScheduler__OclElement.initOperations(_VmScheduler__OclElement);
+			Fragments._VmScheduler__OclEnumeration.initOperations(_VmScheduler__OclEnumeration);
+			Fragments._VmScheduler__OclType.initOperations(_VmScheduler__OclType);
 			Fragments._VmScheduler__VmScheduler.initOperations(_VmScheduler__VmScheduler);
 
 			Fragments._double__OclAny.initOperations(_double__OclAny);
 			Fragments._double__double.initOperations(_double__double);
 
 			Fragments._utilizationModel__OclAny.initOperations(_utilizationModel__OclAny);
+			Fragments._utilizationModel__OclElement.initOperations(_utilizationModel__OclElement);
+			Fragments._utilizationModel__OclEnumeration.initOperations(_utilizationModel__OclEnumeration);
+			Fragments._utilizationModel__OclType.initOperations(_utilizationModel__OclType);
 			Fragments._utilizationModel__utilizationModel.initOperations(_utilizationModel__utilizationModel);
 
 			Init.initEnd();
@@ -1431,6 +1575,18 @@ public class SimulationTables
 			FragmentProperties.init();
 		}
 
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _BwProvisionner__BwProvisionerSimple = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.BW_PROVISIONNER.getEEnumLiteral("BwProvisionerSimple"), Types._BwProvisionner, 0);
+		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _BwProvisionner = {
+			_BwProvisionner__BwProvisionerSimple
+		};
+
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _CloudletScheduler__CloudletSchedulerSpaceShared = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.CLOUDLET_SCHEDULER.getEEnumLiteral("CloudletSchedulerSpaceShared"), Types._CloudletScheduler, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _CloudletScheduler__CloudletSchedulerTimeShared = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.CLOUDLET_SCHEDULER.getEEnumLiteral("CloudletSchedulerTimeShared"), Types._CloudletScheduler, 1);
+		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _CloudletScheduler = {
+			_CloudletScheduler__CloudletSchedulerSpaceShared,
+			_CloudletScheduler__CloudletSchedulerTimeShared
+		};
+
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _ElasticityType__None = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.ELASTICITY_TYPE.getEEnumLiteral("None"), Types._ElasticityType, 0);
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _ElasticityType__Vertical = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.ELASTICITY_TYPE.getEEnumLiteral("Vertical"), Types._ElasticityType, 1);
 		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _ElasticityType__Horizontal = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.ELASTICITY_TYPE.getEEnumLiteral("Horizontal"), Types._ElasticityType, 2);
@@ -1440,11 +1596,45 @@ public class SimulationTables
 			_ElasticityType__Horizontal
 		};
 
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _PeProvisionner__PeProvisionerSimple = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.PE_PROVISIONNER.getEEnumLiteral("PeProvisionerSimple"), Types._PeProvisionner, 0);
+		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _PeProvisionner = {
+			_PeProvisionner__PeProvisionerSimple
+		};
+
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _RamProvisionner__RamProvisionerSimple = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.RAM_PROVISIONNER.getEEnumLiteral("RamProvisionerSimple"), Types._RamProvisionner, 0);
+		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _RamProvisionner = {
+			_RamProvisionner__RamProvisionerSimple
+		};
+
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _VmScheduler__VmSchedulerSpaceShared = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.VM_SCHEDULER.getEEnumLiteral("VmSchedulerSpaceShared"), Types._VmScheduler, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _VmScheduler__VmSchedulerTimeShared = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.VM_SCHEDULER.getEEnumLiteral("VmSchedulerTimeShared"), Types._VmScheduler, 1);
+		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _VmScheduler = {
+			_VmScheduler__VmSchedulerSpaceShared,
+			_VmScheduler__VmSchedulerTimeShared
+		};
+
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _utilizationModel__UtilizationModelFull = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.UTILIZATION_MODEL.getEEnumLiteral("UtilizationModelFull"), Types._utilizationModel, 0);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _utilizationModel__UtilizationModelNull = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.UTILIZATION_MODEL.getEEnumLiteral("UtilizationModelNull"), Types._utilizationModel, 1);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _utilizationModel__UtilizationModelPlanetLabInMemory = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.UTILIZATION_MODEL.getEEnumLiteral("UtilizationModelPlanetLabInMemory"), Types._utilizationModel, 2);
+		public static final /*@NonNull*/ EcoreExecutorEnumerationLiteral _utilizationModel__UtilizationModelStochastic = new EcoreExecutorEnumerationLiteral(SimulationPackage.Literals.UTILIZATION_MODEL.getEEnumLiteral("UtilizationModelStochastic"), Types._utilizationModel, 3);
+		private static final /*@NonNull*/ EcoreExecutorEnumerationLiteral /*@NonNull*/ [] _utilizationModel = {
+			_utilizationModel__UtilizationModelFull,
+			_utilizationModel__UtilizationModelNull,
+			_utilizationModel__UtilizationModelPlanetLabInMemory,
+			_utilizationModel__UtilizationModelStochastic
+		};
+
 		/**
 		 *	Install the enumeration literals in the enumerations.
 		 */
 		static {
+			Types._BwProvisionner.initLiterals(_BwProvisionner);
+			Types._CloudletScheduler.initLiterals(_CloudletScheduler);
 			Types._ElasticityType.initLiterals(_ElasticityType);
+			Types._PeProvisionner.initLiterals(_PeProvisionner);
+			Types._RamProvisionner.initLiterals(_RamProvisionner);
+			Types._VmScheduler.initLiterals(_VmScheduler);
+			Types._utilizationModel.initLiterals(_utilizationModel);
 
 			Init.initEnd();
 		}
