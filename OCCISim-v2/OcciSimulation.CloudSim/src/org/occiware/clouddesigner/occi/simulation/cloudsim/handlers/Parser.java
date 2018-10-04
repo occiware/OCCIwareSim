@@ -4,6 +4,7 @@ package org.occiware.clouddesigner.occi.simulation.cloudsim.handlers;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -159,12 +160,6 @@ public class Parser {
 		for(Link link : resource.getLinks()) {
 			if(link.getTarget().getKind().getTerm().contains("cloudlet")){
 				idTarget.add(link.getTarget().getId());
-			}else{
-				for(Mixin m: link.getTarget().getMixins()){
-					if(m.getTerm().contains("cloudlet")){
-						idTarget.add(link.getTarget().getId());
-					}
-				}
 			}
 		}
 
@@ -199,12 +194,6 @@ public class Parser {
 		for(Link link : resource.getLinks()) {
 			if(link.getTarget().getKind().getTerm().contains("vm")){
 				idTarget.add(link.getTarget().getId());
-			}else{
-				for(Mixin m: link.getTarget().getMixins()){
-					if(m.getTerm().contains("vm")){
-						idTarget.add(link.getTarget().getId());
-					}
-				}
 			}
 		}
 		return new Host_Config(id, idTarget, id_host, mips, core, ramProvisioner,
@@ -239,10 +228,9 @@ public class Parser {
 
 		//host linked to datacenter
 		for(Link link : resource.getLinks()) {
-			for(Mixin m: link.getTarget().getMixins()){
-				if(m.getTerm().contains("host") || m.getTerm().contains("HarddriveStorage")){
+				if(link.getTarget().getKind().getTerm().contains("host") 
+						|| link.getTarget().getKind().getTerm().contains("HarddriveStorage")){
 					idTarget.add(link.getTarget().getId());
-				}
 			}	
 		}
 		//create datacenter

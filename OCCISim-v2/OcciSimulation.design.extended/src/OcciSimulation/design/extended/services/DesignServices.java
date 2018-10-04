@@ -190,8 +190,7 @@ public class DesignServices {
 		Map<Entity, Set<Entity>> entities= bridge.ExtaractEntities();
 		
 		System.out.println(entities.size());
-		//System.out.println("Probability : "+getProba(config));
-		//getPricing(entities);
+		getPricing(entities);
 		
 		Shell shell = this.getShell();
 		String msg = bridge.checkEntities();

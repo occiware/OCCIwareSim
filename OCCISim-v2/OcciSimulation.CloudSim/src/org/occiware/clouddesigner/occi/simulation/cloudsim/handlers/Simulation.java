@@ -41,6 +41,9 @@ import org.occiware.clouddesigner.occi.simulation.cloudsim.provisioners.BwProvis
 import org.occiware.clouddesigner.occi.simulation.cloudsim.provisioners.PeProvisioner;
 import org.occiware.clouddesigner.occi.simulation.cloudsim.provisioners.RamProvisioner;
 import org.occiware.clouddesigner.occi.simulation.cloudsim.provisioners.RamProvisionerSimple;
+
+import occ.simulation.ElasticityType;
+
 import org.occiware.clouddesigner.occi.simulation.cloudsim.Storage;
 import org.occiware.clouddesigner.occi.simulation.cloudsim.UtilizationModel;
 
@@ -459,7 +462,7 @@ public class Simulation {
 
 		long totalsizeVm =0;
 		int totalram = 0;
-		if(host_config.elastic_host.equals("V")){
+		if(host_config.elastic_host == ElasticityType.VERTICAL){
 			listHostConfig.remove(host_config);
 			Iterator<Entity> itVM = vms.iterator();
 			while (itVM.hasNext()) {
@@ -475,7 +478,7 @@ public class Simulation {
 			host.setStorage(totalsizeVm);
 			host.getRamProvisioner().setRam(totalram);
 			host.getRamProvisioner().setAvailableRam(totalram);
-		}else if(host_config.elastic_host.equals("H")){
+		}else if(host_config.elastic_host == ElasticityType.HORIZONTAL){
 			Iterator<Entity> itVM = vms.iterator();
 			totalsizeVm = 0;
 			while (itVM.hasNext()) {

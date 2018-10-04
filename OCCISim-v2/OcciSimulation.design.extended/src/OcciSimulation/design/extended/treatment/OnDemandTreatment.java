@@ -45,7 +45,6 @@ public class OnDemandTreatment {
 	static JSONObject ReadFile() throws FileNotFoundException, IOException,
 			ParseException {
 		JSONParser parser = new JSONParser();
-		System.out.println("ReadFile ...");
 		File f = new File("/home/mehdi/index.json");
 		if(f.exists())
 		{
@@ -70,9 +69,7 @@ public class OnDemandTreatment {
 	 */
 	static ArrayList<Object> getListOnDemandShared()
 			throws FileNotFoundException, IOException, ParseException {
-		System.out.println("Just before");
 		JSONObject jsonObject = ReadFile();
-		System.out.println("Just after");
 		ArrayList<Object> demandShared = new ArrayList<>();
 		JSONObject posts = (JSONObject) jsonObject.get("products");
 		Set<?> s1 = posts.keySet();
