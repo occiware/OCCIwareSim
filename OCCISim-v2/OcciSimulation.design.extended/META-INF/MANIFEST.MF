@@ -19,6 +19,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
 Automatic-Module-Name: OcciSimulation.design.extended
 Import-Package: occ.simulation.impl,
- org.json.simple,
- org.json.simple.parser,
  org.occiware.clouddesigner.occi.simulation.cloudsim.handlers

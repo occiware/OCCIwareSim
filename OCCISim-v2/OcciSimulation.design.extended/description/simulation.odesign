@@ -2056,7 +2056,7 @@
           </style>
         </containerMappings>
         <toolSections name="Simulation resources">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Datacenter" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='DatacenterContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Datacenter" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='DatacenterContainer']" iconPath="/OcciSimulation.design.extended/icons/datacenter.jpg">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2070,7 +2070,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create VM" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VMContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create VM" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VMContainer']" iconPath="/OcciSimulation.design.extended/icons/vm.jpg">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2084,7 +2084,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Host" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Host" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostContainer']" iconPath="/OcciSimulation.design.extended/icons/host.jpg">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2098,7 +2098,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Cloudlet" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudletContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Cloudlet" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudletContainer']" iconPath="/OcciSimulation.design.extended/icons/task.jpg">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2112,7 +2112,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create HardDrive" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HardDriveContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create HardDrive" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HardDriveContainer']" iconPath="/OcciSimulation.design.extended/icons/harddisk.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2126,7 +2126,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create SanStorage" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SanStorageContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create SanStorage" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SanStorageContainer']" iconPath="/OcciSimulation.design.extended/icons/san.jpeg">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2140,7 +2140,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Network" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Network" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']" iconPath="/OcciSimulation.design.extended/icons/network.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2154,7 +2154,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Compute" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Compute" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']" iconPath="/OcciSimulation.design.extended/icons/compute.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2168,7 +2168,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Storage" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Storage" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']" iconPath="/OcciSimulation.design.extended/icons/storage.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2184,7 +2184,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="Simulation links">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create StorageLink" edgeMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='StorageLinkEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create StorageLink" edgeMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='StorageLinkEdge']" iconPath="/OcciSimulation.design.extended/icons/storage_link.png">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -2197,7 +2197,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create NetworkInterface" edgeMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='NetworkInterfaceEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Create NetworkInterface" edgeMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='NetworkInterfaceEdge']" iconPath="/OcciSimulation.design.extended/icons/network_link.jpg">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -2210,7 +2210,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Contains" edgeMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='ResourceToResource']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Contains" edgeMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='ResourceToResource']" iconPath="/OcciSimulation.design.extended/icons/contains.jpg">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -2234,7 +2234,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Spot" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HardDriveContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VMContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SanStorageContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='DatacenterContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudletContainer']/@subContainerMappings[name='SpotMixin']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create Spot" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HardDriveContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VMContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SanStorageContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='DatacenterContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='SpotMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudletContainer']/@subContainerMappings[name='SpotMixin']" iconPath="/OcciSimulation.design.extended/icons/dollar.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2243,7 +2243,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create OnDemand" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HardDriveContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VMContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SanStorageContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='DatacenterContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudletContainer']/@subContainerMappings[name='OnDemandMixin']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create OnDemand" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HardDriveContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VMContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SanStorageContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='DatacenterContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='OnDemandMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudletContainer']/@subContainerMappings[name='OnDemandMixin']" iconPath="/OcciSimulation.design.extended/icons/dollar.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2252,7 +2252,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create UpFront" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HardDriveContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VMContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SanStorageContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='DatacenterContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudletContainer']/@subContainerMappings[name='UpFrontMixin']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Create UpFront" containerMappings="//@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HostContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='HardDriveContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='VMContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='SanStorageContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='DatacenterContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='StorageContainer']/@subContainerMappings[name='UpFrontMixin'] //@ownedViewpoints[name='SimulationConfiguration']/@ownedRepresentations[name='SimulationConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='CloudletContainer']/@subContainerMappings[name='UpFrontMixin']" iconPath="/OcciSimulation.design.extended/icons/dollar.png">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
