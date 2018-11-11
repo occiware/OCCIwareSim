@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.common,
  org.eclipse.cmf.occi.core;bundle-version="1.0.0",
  org.eclipse.cmf.occi.infrastructure;bundle-version="1.0.0"
-Import-Package: occ.simulation,
+Import-Package: com.amazonaws,
+ occ.simulation,
  occ.simulation.impl
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

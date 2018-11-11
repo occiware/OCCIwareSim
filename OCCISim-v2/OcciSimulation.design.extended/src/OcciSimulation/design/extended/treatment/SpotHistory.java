@@ -5,6 +5,12 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Date;
+
+import com.amazonaws.services.ec2.AmazonEC2;
+import com.amazonaws.services.ec2.AmazonEC2ClientBuilder;
+import com.amazonaws.services.ec2.model.DescribeSpotPriceHistoryRequest;
+import com.amazonaws.services.ec2.model.DescribeSpotPriceHistoryResult;
 
 /**
  * The SpotHistory program implements methods that pass a command line to the
@@ -25,12 +31,21 @@ public class SpotHistory {
 	 * @return Nothing
 	 */
 	static void RunSpotPrice(String instance) throws IOException {
-
+		String spot = "aws ec2 describe-spot-price-history --instance-types "+instance
+				+" --product-description \"Linux/UNIX (Amazon VPC)\"";
+		System.out.println(spot);
 		Runtime runtime = Runtime.getRuntime();
 		final Process process = runtime
-				.exec("aws ec2 describe-spot-price-history --instance-types "
-						+ instance
-						+ "  --product-description Linux/UNIX --start-time 2017-06-02T14:08:09 --end-time 2017-06-02T14:09:10");
+				.exec(spot);
+		
+		AmazonEC2 client = AmazonEC2ClientBuilder.standard().build();
+    	
+    	Date start =  new Date(2014, 1, 6, 8, 9, 10);
+    	Date end =  new Date(2014, 1, 6, 7, 9, 10);
+    	DescribeSpotPriceHistoryRequest request = new DescribeSpotPriceHistoryRequest().withEndTime(start)
+    	.withInstanceTypes(instance).withProductDescriptions("Linux/UNIX (Amazon VPC)").withStartTime(end);
+    	DescribeSpotPriceHistoryResult response = client.describeSpotPriceHistory(request);
+    	System.out.println(response);
 
 		// Consommation de la sortie standard de l'application externe dans un
 		// Thread separe

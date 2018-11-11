@@ -18,5 +18,9 @@ Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-Vendor: %providerName
 Automatic-Module-Name: OcciSimulation.design.extended
-Import-Package: occ.simulation.impl,
+Import-Package: com.amazonaws.client.builder,
+ com.amazonaws.services.ec2,
+ com.amazonaws.services.ec2.model,
+ occ.simulation.impl,
  org.occiware.clouddesigner.occi.simulation.cloudsim.handlers
+Bundle-ClassPath: .

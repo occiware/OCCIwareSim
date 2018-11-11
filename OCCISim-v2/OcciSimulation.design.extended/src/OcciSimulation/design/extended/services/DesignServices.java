@@ -207,7 +207,7 @@ public class DesignServices {
 			}
 			//verify the additionnal entities
 			verifyTheAdditionnalResource(simulation.entities, config);
-
+			System.out.println(simulation.getResult());
 			JOptionPane.showMessageDialog(null, simulation.getResult(),
 					"Simulation Result",
 					JOptionPane.INFORMATION_MESSAGE);
