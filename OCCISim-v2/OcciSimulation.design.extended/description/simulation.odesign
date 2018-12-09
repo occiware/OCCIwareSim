@@ -3333,6 +3333,32 @@
               </initialOperation>
             </menuItemDescription>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Maps to" precondition="[self.oclIsKindOf(Entity)/]">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="VM">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiCreate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Cloudlet">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiRetrieve()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Host">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiUpdate()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Datacenter">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.oclAsType(Entity).occiDelete()/]"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
         </toolSections>
         <toolSections name="Execution">
           <ownedTools xsi:type="tool_1:PopupMenu" name="Execute">
